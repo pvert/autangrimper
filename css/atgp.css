@@ -1,0 +1,85 @@
+/**
+* CSS FOR SEDOO LABTOOLS
+* author : pVert
+*/
+
+.atgp-flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#atgp-groupe.atgp-flex > * {
+    flex:0 1 400px;
+}
+
+.acf-form {
+
+}
+
+.acf-form .description {
+    font-size: .8rem;
+}
+
+/* .acf-form .acf-label,  */
+
+.acf-form .acf-button {
+    /* margin:20px 10px 10px;
+    font-size: 1rem; */
+}
+
+.acf-form .acf-input {
+    /* border: 1px solid #333; */
+}
+
+.acf-form .acf-button {
+    border-radius:5px;
+    background-color: var(--theme-color);
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.acf-field-5d763caf8246e {
+    display:none;
+}
+
+/****************/
+
+section[id^="atgp_"] {
+    padding-bottom:30px;
+    border-bottom:1px solid #CCC;
+}
+
+#atgp_type_reduction {
+    display:flex;
+}
+#atgp_type_reduction > div {
+    border:1px solid var(--theme-color);
+    /* color:var(--hover-textcolor); */
+    padding:5px 10px;
+    margin-right:10px;
+    border-radius:5px;
+    align-self: flex-start;
+}
+#atgp_type_reduction > div > span {
+    font-size: 1rem;
+}
+
+/****************/
+#atgp_total ul li {
+    display:flex;
+    justify-content: space-between;
+    padding:10px;
+}
+
+#atgp_total ul li:last-child{
+    font-size:1.2rem;
+    background:var(--theme-color);
+    color:var(--hover-textcolor);
+}
+
+.atgp_reduc {
+    background:#CCC;
+}
