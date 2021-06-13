@@ -726,8 +726,7 @@ if( function_exists('acf_add_local_field_group') ):
                                     array(
                                         array(
                                             'field' => 'field_60c004ca97a90',
-                                            'operator' => '>',
-                                            'value' => '1',
+                                            'operator' => '!=empty',
                                         ),
                                     ),
                                 ),
