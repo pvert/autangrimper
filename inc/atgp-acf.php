@@ -77,34 +77,34 @@ add_action('acf/save_post', 'atgp_title_saver', 20);
  * set private with password
  */
 
-add_action( 'save_post', 'check_type_values', 10, 2 );
+// add_action( 'save_post', 'check_type_values', 10, 2 );
 
-function check_type_values( $post_id, $post ) {
-    $passwd=get_field('atgp_date_de_naissance', $post_id);
+// function check_type_values( $post_id, $post ) {
+//     $passwd=get_field('atgp_date_de_naissance', $post_id);
 
-    if( $post->post_type )
-        switch( $post->post_type ) {
-            case 'atgp-member':
-                $post->post_status = 'private';
-                $post->post_password = ( '' == $post->post_password ) ? 'toto' : $post->post_password;
-            break;
-        }   
-    return;
-}
+//     if( $post->post_type )
+//         switch( $post->post_type ) {
+//             case 'atgp-member':
+//                 $post->post_status = 'private';
+//                 $post->post_password = ( '' == $post->post_password ) ? 'toto' : $post->post_password;
+//             break;
+//         }   
+//     return;
+// }
 
-add_filter( 'default_content', 'set_default_values', 10, 2 );
+// add_filter( 'default_content', 'set_default_values', 10, 2 );
 
-function set_default_values( $post_content, $post ) {
-    $passwd=get_field('atgp_date_de_naissance', $post_id);
-    if( $post->post_type )
-        switch( $post->post_type ) {
-            case 'atgp-member':
-                $post->post_status = 'private';
-                $post->post_password = 'toto';
-            break;
-        }
-    return $post_content;
-}
+// function set_default_values( $post_content, $post ) {
+//     $passwd=get_field('atgp_date_de_naissance', $post_id);
+//     if( $post->post_type )
+//         switch( $post->post_type ) {
+//             case 'atgp-member':
+//                 $post->post_status = 'private';
+//                 $post->post_password = 'toto';
+//             break;
+//         }
+//     return $post_content;
+// }
 
 /**
  * Send email

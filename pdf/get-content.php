@@ -192,40 +192,42 @@ ol li {
                     </tr>   
                     <?php 
                     $cout_reduction_total=0;
-                    foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $coutReduction) {
-                    $cout_reduction=get_field('atgp_ctx_reduction_montant', $coutReduction);
-                    
-                    if (get_field('atgp_ctx_reduction_type', $coutReduction) == "fixe") {
-                        $type_reduction="€";
-                        $cout_reduction_total=$cout_reduction_total+$cout_reduction;
-                    } else {
-                        $type_reduction="%";
-                        $reduc_pourcentage=$cout_reduction;
-                    }
-                    ?>
-                    <tr id="atgp_total_reduc">
-                        <td><?php echo $coutReduction->name." : ";?>
-                        <?php
-                        if ($coutReduction->slug == "atgp-reduc-1") {
-                            $featured_members = $cout['atgp_reductions']['atgp_reduction_autres_membres'];
-                            if( $featured_members ): ?>
-                            <br>Membres de la famille : 
-                            <?php foreach( $featured_members as $post ):                
-                                // Setup this post for WP functions (variable must be named $post).
-                                setup_postdata($post); ?>
-                                <span><?php the_title(); ?> </span>
-                            <?php endforeach; ?>
-                            <?php 
-                            // Reset the global post object so that the rest of the page works correctly.
-                            wp_reset_postdata();
-                            endif;
-                        }                     
+                    if ($cout['atgp_reductions']['atgp_type_reduction']) {
+                        foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $coutReduction) {
+                        $cout_reduction=get_field('atgp_ctx_reduction_montant', $coutReduction);
+                        
+                        if (get_field('atgp_ctx_reduction_type', $coutReduction) == "fixe") {
+                            $type_reduction="€";
+                            $cout_reduction_total=$cout_reduction_total+$cout_reduction;
+                        } else {
+                            $type_reduction="%";
+                            $reduc_pourcentage=$cout_reduction;
+                        }
                         ?>
-                    
-                        </td>
-                        <td><?php echo "- ".$cout_reduction." ".$type_reduction;?></td>
-                    </tr>
-                    <?php                              
+                        <tr id="atgp_total_reduc">
+                            <td><?php echo $coutReduction->name." : ";?>
+                            <?php
+                            if ($coutReduction->slug == "atgp-reduc-1") {
+                                $featured_members = $cout['atgp_reductions']['atgp_reduction_autres_membres'];
+                                if( $featured_members ): ?>
+                                <br>Membres de la famille : 
+                                <?php foreach( $featured_members as $post ):                
+                                    // Setup this post for WP functions (variable must be named $post).
+                                    setup_postdata($post); ?>
+                                    <span><?php the_title(); ?> </span>
+                                <?php endforeach; ?>
+                                <?php 
+                                // Reset the global post object so that the rest of the page works correctly.
+                                wp_reset_postdata();
+                                endif;
+                            }                     
+                            ?>
+                        
+                            </td>
+                            <td><?php echo "- ".$cout_reduction." ".$type_reduction;?></td>
+                        </tr>
+                        <?php                              
+                        }
                     }
                     $atgp_total=$cout_cours_total-$cout_reduction_total;
                     if ($type_reduction=="%") {

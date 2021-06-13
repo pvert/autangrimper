@@ -130,37 +130,39 @@ $linkToPDF_generator="pdf/printpdf.php?postID=".get_the_id();
                <h2>Réduction(s) : </h2>
                <section id="atgp_type_reduction">
                <?php 
-               foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $reduction) {
-                  ?>
-                  <div>
-                     <span>
-                     <?php 
-                     echo $reduction->name;
+               if ($cout['atgp_reductions']['atgp_type_reduction']) {
+                  foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $reduction) {
                      ?>
-                     </span>
-                     <?php
-                     if ($reduction->slug == "atgp-reduc-1") {
-                        $featured_members = $cout['atgp_reductions']['atgp_reduction_autres_membres'];
-                        if( $featured_members ): ?>
-                           <p>Autres membres de la famille : </p>
-                           <ul>
-                           <?php foreach( $featured_members as $post ):                
-                              // Setup this post for WP functions (variable must be named $post).
-                              setup_postdata($post); ?>
-                              <li>
-                                 <?php the_title(); ?>
-                              </li>
-                           <?php endforeach; ?>
-                           </ul>
-                           <?php 
-                           // Reset the global post object so that the rest of the page works correctly.
-                           wp_reset_postdata();
-                        endif;
-                     }                     
-                     ?>
-                  </div>
-               <?php
-               }                
+                     <div>
+                        <span>
+                        <?php 
+                        echo $reduction->name;
+                        ?>
+                        </span>
+                        <?php
+                        if ($reduction->slug == "atgp-reduc-1") {
+                           $featured_members = $cout['atgp_reductions']['atgp_reduction_autres_membres'];
+                           if( $featured_members ): ?>
+                              <p>Autres membres de la famille : </p>
+                              <ul>
+                              <?php foreach( $featured_members as $post ):                
+                                 // Setup this post for WP functions (variable must be named $post).
+                                 setup_postdata($post); ?>
+                                 <li>
+                                    <?php the_title(); ?>
+                                 </li>
+                              <?php endforeach; ?>
+                              </ul>
+                              <?php 
+                              // Reset the global post object so that the rest of the page works correctly.
+                              wp_reset_postdata();
+                           endif;
+                        }                     
+                        ?>
+                     </div>
+                  <?php
+                  }  
+               }              
                ?>                
                </section>              
                         
@@ -205,23 +207,25 @@ $linkToPDF_generator="pdf/printpdf.php?postID=".get_the_id();
                            ?>
                         <?php 
                         $cout_reduction_total=0;
-                        foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $coutReduction) {
-                           $cout_reduction=get_field('atgp_ctx_reduction_montant', $coutReduction);
-                           
-                           if (get_field('atgp_ctx_reduction_type', $coutReduction) == "fixe") {
-                              $type_reduction="€";
-                              $cout_reduction_total=$cout_reduction_total+$cout_reduction;
-                           } else {
-                              $type_reduction="%";
-                              $reduc_pourcentage=$cout_reduction;
+                        if ($cout['atgp_reductions']['atgp_type_reduction']) {
+                           foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $coutReduction) {
+                              $cout_reduction=get_field('atgp_ctx_reduction_montant', $coutReduction);
+                              
+                              if (get_field('atgp_ctx_reduction_type', $coutReduction) == "fixe") {
+                                 $type_reduction="€";
+                                 $cout_reduction_total=$cout_reduction_total+$cout_reduction;
+                              } else {
+                                 $type_reduction="%";
+                                 $reduc_pourcentage=$cout_reduction;
+                              }
+                              ?>
+                              <li class="atgp_reduc">
+                                    <span><?php echo $coutReduction->name." : ";?></span>
+                                    <span><?php echo "- ".$cout_reduction." ".$type_reduction;?></span>
+                              </li>
+                              <?php                              
                            }
-                           ?>
-                           <li class="atgp_reduc">
-                                 <span><?php echo $coutReduction->name." : ";?></span>
-                                 <span><?php echo "- ".$cout_reduction." ".$type_reduction;?></span>
-                           </li>
-                           <?php                              
-                           }
+                        }
                            $atgp_total=$cout_cours_total-$cout_reduction_total;
                            if ($type_reduction=="%") {
                               $atgp_total=$atgp_total-($atgp_total*($reduc_pourcentage/100));
