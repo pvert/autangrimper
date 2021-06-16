@@ -194,27 +194,42 @@ ol li {
                     $cout_reduction_total=0;
                     if ($cout['atgp_reductions']['atgp_type_reduction']) {
                         foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $coutReduction) {
-                        $cout_reduction=get_field('atgp_ctx_reduction_montant', $coutReduction);
-                        
-                        if (get_field('atgp_ctx_reduction_type', $coutReduction) == "fixe") {
+                            /**
+                             * Get related info from ACF options Réduc
+                             */
+                            // Check rows exists.
+                            if( have_rows('atgp_reduc', 'option') ){
+                            // Loop through rows.
+                            while( have_rows('atgp_reduc', 'option') ) : the_row();
+                                // Load sub field value.
+                                if ($coutReduction['value'] == get_sub_field('atgp_reduc_id')) {
+                                    $atgp_reduc_id = get_sub_field('atgp_reduc_id');
+                                    $atgp_reduc_label = get_sub_field('atgp_reduc_label');
+                                    $atgp_reduc_type = get_sub_field('atgp_reduc_type');
+                                    $atgp_reduc_montant = get_sub_field('atgp_reduc_montant');
+                                }
+                            endwhile;
+                            }
+
+                            if ($atgp_reduc_type == "fixe") {
                             $type_reduction="€";
-                            $cout_reduction_total=$cout_reduction_total+$cout_reduction;
-                        } else {
+                            $cout_reduction_total=$cout_reduction_total+$atgp_reduc_montant;
+                            } else {
                             $type_reduction="%";
-                            $reduc_pourcentage=$cout_reduction;
-                        }
+                            $reduc_pourcentage=$atgp_reduc_montant;
+                            }
                         ?>
                         <tr id="atgp_total_reduc">
-                            <td><?php echo $coutReduction->name." : ";?>
+                            <td><?php echo $atgp_reduc_label." : ";?>
                             <?php
-                            if ($coutReduction->slug == "atgp-reduc-1") {
+                            if ($coutReduction['value'] == "atgp-reduc-1") {
                                 $featured_members = $cout['atgp_reductions']['atgp_reduction_autres_membres'];
                                 if( $featured_members ): ?>
-                                <br>Membres de la famille : 
+                                <br>Membres de la famille : <br>
                                 <?php foreach( $featured_members as $post ):                
                                     // Setup this post for WP functions (variable must be named $post).
                                     setup_postdata($post); ?>
-                                    <span><?php the_title(); ?> </span>
+                                    <span><?php the_title(); ?><br></span>
                                 <?php endforeach; ?>
                                 <?php 
                                 // Reset the global post object so that the rest of the page works correctly.
@@ -224,7 +239,7 @@ ol li {
                             ?>
                         
                             </td>
-                            <td><?php echo "- ".$cout_reduction." ".$type_reduction;?></td>
+                            <td><?php echo "- ".$atgp_reduc_montant." ".$type_reduction;?></td>
                         </tr>
                         <?php                              
                         }

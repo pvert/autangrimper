@@ -13,6 +13,64 @@ add_post_type_support( 'page', 'excerpt' );
  */
 add_theme_support( 'post-thumbnails' );
 
+/**
+ * HOOK ON WP_INSERT_POST for members
+ * 
+ */
+
+// set html content_type for wp_mail() 
+add_filter( 'wp_mail_content_type', function( $content_type ) {
+    return 'text/html';
+} );
+
+function atgp_sendmail( $post_id, $post) {
+    // If this is a revision, don't send the email.
+    if ( wp_is_post_revision( $post_id ) ){
+        return;
+    }
+        
+    // if ( get_post_type( $post_id ) == 'atgp-member' ){
+        
+        $etat_civil=  get_field('atgp_group_etat_civil', $post_id);
+    
+        $post_url = get_permalink( $post_id );
+        $linkToPDF_generator="../pdf/printpdf.php?postID=".$post_id;
+
+        // send email with url access to informations
+        // $post->post_title
+        //$email="inscriptions@autangrimper.fr"; // ajouter options backoff
+        $email=the_field('atgp_option_config_mail', 'option');
+        $to=$etat_civil['atgp_courriel'];
+        // $to="pierr65@gmail.com";
+        // $to=get_post_meta( $post_id, 'atgp_group_etat_civil_atgp_courriel', true );
+
+        // SUBJECT
+        $subject="[Autan Grimper] ".$post->post_title." , votre dossier d'inscription ";
+
+        // HEADERS
+        $headers = 'From: '. $email . "\r\n" .
+        'Reply-To: ' . $email . "\r\n";
+
+        // MESSAGE
+        // $message="post_id :".$post_id." | post->post_id :". $post->post_id ." | to :".$toTest."=". get_post_meta( $post_id, 'atgp_group_etat_civil_atgp_courriel', true ) ."\r\n";
+        $message="<em>Message automatique, ne pas répondre...</em>"."\r\n";
+        $message.="\r\n";
+        $message="<h1>Inscription en ligne Autan Grimper</h1>"."\r\n";
+        $message.="<p>Vous pouvez à présent télécharger et imprimer votre dossier d'inscription à l'adresse suivante : </p>\r\n";
+        //   $message.="<a href=\"https://".site_url()."/membre/".$my_post['post_name']."\">https://".site_url()."/membre/".$my_post['post_name']."</a>"."\r\n";
+        // $message.= "<p>". $post_url."</p>\r\n";
+        $message.= "<p>".plugins_url($linkToPDF_generator, __FILE__)."</p>\r\n";
+        $message.= "<p>Votre mot de passe : <strong>".$etat_civil['atgp_code_postal']."</strong></p>\r\n";
+
+        $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec certificat médical, et chéque(s)"."</u></strong></p>\r\n";
+        $message.="<p>Autan Grimper</p>";
+        // $message .= $post->post_title . ": " . $post_url;
+
+      // wp_mail( $to, $subject, $message, $headers, $attachments );
+      wp_mail( $to, $subject, $message, $headers );
+    //   }
+}
+// add_action( 'wp_insert_post', 'atgp_sendmail', 10, 3 );
 /******************************************************************
  * Afficher les archives des custom taxonomies
  * $categories = get_the_terms( $post->ID, 'category');  

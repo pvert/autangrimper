@@ -83,3 +83,19 @@ section[id^="atgp_"] {
 .atgp_reduc {
     background:#CCC;
 }
+
+/****  JS  ***/
+#atgp-display-total {
+    position: fixed;
+    right:0;
+    top:50%;
+    width: 200px;
+    min-height: 200px;
+    background: #AAA;
+    color: #FFF;
+}
+
+#atgp-display-total #groupPriceArray {
+    display: flex;
+    flex-direction: column;
+}

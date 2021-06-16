@@ -15,11 +15,15 @@ while ( have_posts() ) : the_post();
          <header>
                <h1><?php the_title(); ?></h1>
             </header>
-            
             <section>
             <?php the_content(); ?>
             <hr>
             <h2>Formulaire d'inscription</h2>
+            <div id="atgp-display-total">
+               <div id="groupPriceArray"></div>
+               <div id="reducPriceArray"></div>
+               <button>Mettre à jour le montant</button>
+            </div>
             <?php
                acf_form(array(
                   'post_id'       => 'new_post',
@@ -40,7 +44,6 @@ while ( have_posts() ) : the_post();
 		</div>
 	</main>
 </div>
-
 <?php
 endwhile; 
 get_footer();
