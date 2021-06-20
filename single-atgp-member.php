@@ -228,10 +228,10 @@ $linkToPDF_generator="pdf/printpdf.php?postID=".get_the_id();
 
                               if ($atgp_reduc_type == "fixe") {
                                  $type_reduction="€";
-                                 $cout_reduction_total=$cout_reduction_total+$atgp_reduc_montant;
+                                 $reduc_fixe=$atgp_reduc_montant;
                               } else {
                                  $type_reduction="%";
-                                 $reduc_pourcentage=$atgp_reduc_montant;
+                                 $reduc_pourcentage=$atgp_reduc_montant/100;
                               }
                               ?>
                               <li class="atgp_reduc">
@@ -241,11 +241,13 @@ $linkToPDF_generator="pdf/printpdf.php?postID=".get_the_id();
                               <?php                              
                            }
                         }
-                           $atgp_total=$cout_cours_total-$cout_reduction_total;
-                           if ($type_reduction=="%") {
-                              $atgp_total=$atgp_total-($atgp_total*($reduc_pourcentage/100));
-                              }
+                           $atgp_total=$cout_cours_total-($cout_cours_total*$reduc_pourcentage)-$reduc_fixe;
+                           // if ($type_reduction=="%") {
+                           //    $atgp_total=$atgp_total-($atgp_total*($reduc_pourcentage/100));
+                           //    }
                            ?>
+                           <li><?php echo $cout_cours_total."-(".$cout_cours_total."*".$reduc_pourcentage.")-".$reduc_fixe;?></li>
+                           </li>
                            <li>
                               <span>Coût total : </span>
                               <span><?php echo $atgp_total; ?> €</span>

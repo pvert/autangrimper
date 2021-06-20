@@ -20,12 +20,17 @@ while ( have_posts() ) : the_post();
             <hr>
             <h2>Formulaire d'inscription</h2>
             <div id="atgp-display-total">
+               <section class="wp-block-buttons is-content-justification-center">
+                  <div class="wp-block-button">
+                     <button class="wp-block-button__link">Mettre à jour le montant : <span id="TOTAL"></span></button>
+                  </div>
+               </section>
                <div id="groupPriceArray"></div>
-               <div id="reducPriceArray"></div>
-               <button>Mettre à jour le montant</button>
+               <div id="alert"></div>
             </div>
             <?php
                acf_form(array(
+                  'id'           => 'register-form',
                   'post_id'       => 'new_post',
                   'new_post'      => array(
                      'post_type'     => 'atgp-member',

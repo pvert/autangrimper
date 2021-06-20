@@ -3,23 +3,47 @@
 */
 
 jQuery(document).ready(function(){
-    console.log('HELLO');
 
     // init 
-    jQuery('#acf-field_60c359e1ee3a0-field_60bfeadffedbc').focusout(function() {
-        // alert( "Handler for .focus() called." );      
-        // var datnat = jQuery(this).val();
-        var datnat = jQuery('#acf-field_60c359e1ee3a0-field_60bfeadffedbc').val();
-        // jQuery('#atgp-display-total').text(jQuery(this).val());
-        console.log(datnat);
+    // jQuery('#acf-field_60c359e1ee3a0-field_60bfeadffedbc').focusout(function() {
+    //     // alert( "Handler for .focus() called." );
+    //     var datnat = jQuery('#acf-field_60c359e1ee3a0-field_60bfeadffedbc').val();
+    //     console.log(datnat);
         
-    });
+    // });
 
+    // LASTNAME
+    jQuery('#acf-field_60c359e1ee3a0-field_60bfea45fedb9').on( "blur", function() {
+        jQuery('#acf-field_60c359e1ee3a0-field_60bfea45fedb9').val(function( i, val ) {
+            return val.toUpperCase();
+        });
+    });
+    // FIRSTNAME
+    jQuery('#acf-field_60c359e1ee3a0-field_60bfea89fedba').on( "blur", function() {
+        jQuery('#acf-field_60c359e1ee3a0-field_60bfea89fedba').val(function( i, val ) {
+            return val.toUpperCase();
+        });
+    });
+    // LASTNAME contact
+    jQuery('#acf-field_60c35a75ff823-field_60c22f3097aad').on( "blur", function() {
+        jQuery('#acf-field_60c35a75ff823-field_60c22f3097aad').val(function( i, val ) {
+            return val.toUpperCase();
+        });
+    });
+    // FIRSTNAME contact
+    jQuery('#acf-field_60c35a75ff823-field_60c22f4c97aae').on( "blur", function() {
+        jQuery('#acf-field_60c35a75ff823-field_60c22f4c97aae').val(function( i, val ) {
+            return val.toUpperCase();
+        });
+    });
+    // disable total input, and submit
+    jQuery('#acf-field_60c35ab2e3911-field_60c005e597a91').prop('disabled', true);
+    jQuery('.acf-form-submit input[type="submit"]').prop('disabled', true);
+    var total=0;
     // GET groupe checkbox 
-       
-    //   jQuery( '.acf-taxonomy-field input[type=checkbox]' ).on( "click", countChecked );
-    // jQuery( '.acf-taxonomy-field input[type=checkbox]' ).on( "click", function() {
-        jQuery( '#atgp-display-total > button' ).on( "click", function() {
+        jQuery( '#atgp-display-total button' ).on( "click", function() {
+
+            /************************************************************************************************* */
             var groupSelected = [];
             var groupID;
         // var groupID = jQuery( ".acf-taxonomy-field input:checked" ).val();
@@ -28,6 +52,8 @@ jQuery(document).ready(function(){
             // add $(this).val() to your array
                 groupID = jQuery(this).val();
                 console.log(groupID);
+                /* LOCAL */
+                
                 switch(groupID) {
                     case "11":
                         var groupPrice = 165;
@@ -64,15 +90,54 @@ jQuery(document).ready(function(){
                         break;            
                     default:
                         var groupPrice = 0;
-                   } 
-
+                   }
+                
+                /* ONLINE */
+                // switch(groupID) { 
+                //     case "51":
+                //         var groupPrice = 165;
+                //         break;
+                //     case "52":
+                //         var groupPrice = 80;
+                //         break;
+                //     case "59":
+                //         var groupPrice = 235;
+                //         break;
+                //     case "53":
+                //         var groupPrice = 195;
+                //         break;
+                //     case "54":
+                //         var groupPrice = 195;
+                //         break;
+                //     case "55":
+                //         var groupPrice = 195;
+                //         break;
+                //     case "56":
+                //         var groupPrice = 195;
+                //         break;
+                //     case "57":
+                //         var groupPrice = 195;
+                //         break;
+                //     case "58":
+                //         var groupPrice = 80;
+                //         break;
+                //     case "60":
+                //         var groupPrice = 195;
+                //         break;
+                //     case "61":
+                //         var groupPrice = 195;
+                //         break;            
+                //     default:
+                //         var groupPrice = 0;
+                //    }
+                
                 groupSelected.push(groupPrice);
             });
             jQuery( ".acf-field-60c004ca97a90 input:checked" ).each(function() 
             {
             // add $(this).val() to your array
                 atgpReduc = jQuery(this).val();
-                console.log(atgpReduc);
+                // console.log(atgpReduc);
                 switch(atgpReduc) {
                     case "atgp-reduc-1":
                         var atgpReducPrice = 30;
@@ -86,45 +151,93 @@ jQuery(document).ready(function(){
 
                 groupSelected.push(atgpReducPrice);
             });
-            console.log(groupSelected.length);
+            // console.log(groupSelected.length);
             jQuery('#atgp-display-total #groupPriceArray span').remove();
+            jQuery('#atgp-display-total #TOTAL span').remove();
+           
+            var totalCours=0;
+            var reduc=0;
+            var reduc1=0;
+            var typeReduc = "€";
+            var reduc2=0;
+            var atgp_reduc_montant=0;
             groupSelected.forEach(function(item, index){
-                console.log(item, index);                
-                jQuery('#atgp-display-total #groupPriceArray').append( "<span id=\""+ index +"\">"+ item + "</span>");
+                // console.log(item, index);
+                // if ($atgp_reduc_type == "fixe") {
+                //     $type_reduction="€";
+                //     $cout_reduction_total=$cout_reduction_total+$atgp_reduc_montant;
+                //  } else {
+                //     $type_reduction="%";
+                //     $reduc_pourcentage=$atgp_reduc_montant;
+                //  }
+                switch(item) {
+                    case 30:
+                        reduc1 = -30;
+                        reduc=reduc1;
+                        // console.log(reduc1);
+                        break;
+                    case 10:
+                        reduc2 = 10/100;
+                        reduc=10;
+                        // console.log(reduc2);
+                        typeReduc="%";
+                        break;          
+                    default:
+                        console.log("switch Index" + index);
+                        if (index == 1) {
+                            totalCours = totalCours + item - 60;
+                            reduc=item - 60;
+                        } else {
+                            totalCours = totalCours + item;
+                            reduc=item;
+                        }
+                        
+                        
+                        // console.log(totalCours);
+                   } 
+
+                jQuery('#atgp-display-total #groupPriceArray').append( "<span id=\""+ index +"\"> > "+ reduc + ""+ typeReduc +" </span>");
             });
+            console.log(totalCours + "-(" + totalCours+ "*" + reduc2 +")+"+reduc1+ "");
+            total=totalCours-(totalCours*reduc2)+reduc1;
+            jQuery('#atgp-display-total #TOTAL').append("<span>" + total + " €</span>");
+            jQuery('#acf-field_60c35ab2e3911-field_60c005e597a91').val(total);
         // jQuery('#atgp-display-total').append( "<p>"+ groupPrice + "</p>" );
       });
 
-// groupe adulte :  [data-id="11"]
-// enf-L :          [data-id="12"]
-// Perf :            [data-id="10"]
-// enf :          [data-id="7"] 8 5 2 3 6 10 4 9
+      
+      // cheque 1 = jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33c2a84300')
+      // cheque 2 = jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d3184303') 
+      // cheque 3 = jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d9584305')
+      var cheque1=0;
+      var cheque2=0;
+      var cheque3=0;
 
+      jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33c2a84300, #acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d3184303, #acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d9584305').focusout(function() {
+        var cheque1 = parseInt(jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33c2a84300').val());
+        var cheque2 = parseInt(jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d3184303').val());
+        var cheque3 = parseInt(jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d9584305').val());
+        jQuery('#atgp-display-total #alert span').remove();
+        totalCheque = cheque1;
+        if (cheque2) {
+            totalCheque = cheque1+cheque2;
+        }
+        if ((cheque2) && (cheque3)){
+            totalCheque = cheque1+cheque2+cheque3;
+        }
+        if ((cheque1) && (cheque3) && !cheque2){
+            totalCheque = cheque1+cheque3;
+        }
+        console.log(totalCheque);
+        if (totalCheque != total) {
+            jQuery('#atgp-display-total #alert').append("<span>Le montant des chèques n'est pas égal au montant total ("+total+ ")</span>");
+            jQuery('.acf-form-submit input[type="submit"]').prop('disabled', true);
+        } else {
+            jQuery('.acf-form-submit input[type="submit"]').prop('disabled', false);
+        }
+      });
 
-    // var datnat = jQuery('#acf-field_60c359e1ee3a0-field_60bfeadffedbc').val();
-    // console.log(datnat);
-    // if (jQuery('.acf-taxonomy-field > input[type="checkbox"]').is(":checked"))
-    // {
-    //     console.log("check");
-    // }
 
 });
 
-/**
- * ACF JS API
- */
 
-// acf.add_action('ready', function( $el ){
-	
-// 	// $el will be equivalent to $('body')
-	
-	
-// 	// find a specific field
-// 	var $field = $('#acf-field_60c359e1ee3a0-field_60bfeadffedbc');
-
-//     field.$input().focus();
-	
-	
-// 	// do something to $field
-	
-// });

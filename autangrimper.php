@@ -18,7 +18,7 @@ function atgp_scripts() {
     // autocomplete form member register form
     if (( get_post_type() == 'atgp-member' ) && (get_post_field( 'post_name', $post_id ) == "atgp-inscription")){
         $atgp_src_script = plugins_url().'/autangrimper/js/atgp.js';    
-        wp_enqueue_script( 'atgp-script', $atgp_src_script,  array ( 'jquery' ));
+        wp_enqueue_script( 'atgp-script', $atgp_src_script,  array ( 'jquery', 'wp-api' ));
     }
 
 }

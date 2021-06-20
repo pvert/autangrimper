@@ -186,13 +186,15 @@ ol li {
                         $i++;
                     } 
                     ?>
-
+                    <?php
+                    if ($cout['atgp_reductions']['atgp_type_reduction']) {
+                    ?>
                     <tr>
                         <td colspan="2" class="borderb">Réduction(s)</td>
                     </tr>   
                     <?php 
                     $cout_reduction_total=0;
-                    if ($cout['atgp_reductions']['atgp_type_reduction']) {
+                    
                         foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $coutReduction) {
                             /**
                              * Get related info from ACF options Réduc
@@ -211,13 +213,20 @@ ol li {
                             endwhile;
                             }
 
+                            // if ($atgp_reduc_type == "fixe") {
+                            // $type_reduction="€";
+                            // $cout_reduction_total=$cout_reduction_total+$atgp_reduc_montant;
+                            // } else {
+                            // $type_reduction="%";
+                            // $reduc_pourcentage=$atgp_reduc_montant;
+                            // }
                             if ($atgp_reduc_type == "fixe") {
-                            $type_reduction="€";
-                            $cout_reduction_total=$cout_reduction_total+$atgp_reduc_montant;
-                            } else {
-                            $type_reduction="%";
-                            $reduc_pourcentage=$atgp_reduc_montant;
-                            }
+                                $type_reduction="€";
+                                $reduc_fixe=$atgp_reduc_montant;
+                             } else {
+                                $type_reduction="%";
+                                $reduc_pourcentage=$atgp_reduc_montant/100;
+                             }
                         ?>
                         <tr id="atgp_total_reduc">
                             <td><?php echo $atgp_reduc_label." : ";?>
@@ -244,10 +253,10 @@ ol li {
                         <?php                              
                         }
                     }
-                    $atgp_total=$cout_cours_total-$cout_reduction_total;
-                    if ($type_reduction=="%") {
-                        $atgp_total=$atgp_total-($atgp_total*($reduc_pourcentage/100));
-                        }
+                    $atgp_total=$cout_cours_total-($cout_cours_total*$reduc_pourcentage)-$reduc_fixe;
+                    // if ($type_reduction=="%") {
+                    //     $atgp_total=$atgp_total-($atgp_total*($reduc_pourcentage/100));
+                    //     }
                     ?>
                     <tr>
                         <td colspan="2" class="borderb"></td>
