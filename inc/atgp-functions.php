@@ -45,7 +45,7 @@ function atgp_sendmail( $post_id, $post) {
         // $to=get_post_meta( $post_id, 'atgp_group_etat_civil_atgp_courriel', true );
 
         // SUBJECT
-        $subject="[Autan Grimper] ".$post->post_title." , votre dossier d'inscription ";
+        $subject="[Autan Grimper] ".$post->post_title." , votre dossier de pré-inscription ";
 
         // HEADERS
         $headers = 'From: '. $email . "\r\n" .
@@ -55,8 +55,8 @@ function atgp_sendmail( $post_id, $post) {
         // $message="post_id :".$post_id." | post->post_id :". $post->post_id ." | to :".$toTest."=". get_post_meta( $post_id, 'atgp_group_etat_civil_atgp_courriel', true ) ."\r\n";
         $message="<em>Message automatique, ne pas répondre...</em>"."\r\n";
         $message.="\r\n";
-        $message="<h1>Inscription en ligne Autan Grimper</h1>"."\r\n";
-        $message.="<p>Vous pouvez à présent télécharger et imprimer votre dossier d'inscription à l'adresse suivante : </p>\r\n";
+        $message="<h1>Pré-inscription en ligne Autan Grimper</h1>"."\r\n";
+        $message.="<p>Vous pouvez à présent télécharger et imprimer votre dossier de pré-inscription à l'adresse suivante : </p>\r\n";
         //   $message.="<a href=\"https://".site_url()."/membre/".$my_post['post_name']."\">https://".site_url()."/membre/".$my_post['post_name']."</a>"."\r\n";
         // $message.= "<p>". $post_url."</p>\r\n";
         $message.= "<p>".plugins_url($linkToPDF_generator, __FILE__)."</p>\r\n";

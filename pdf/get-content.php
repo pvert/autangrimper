@@ -92,7 +92,7 @@ ol li {
 </style>
 <page orientation="portrait" format="A4" style="font-size: 12px" backtop="7mm" backbottom="7mm" backleft="7mm" backright="7mm">
     <page_header> 
-        <p>DOSSIER D'INSCRIPTION AUTAN GRIMPER</p>         
+        <p>DOSSIER DE PRE-INSCRIPTION AUTAN GRIMPER</p>         
     </page_header> 
     <?php
     $etat_civil=  get_field('atgp_group_etat_civil', $post_id);

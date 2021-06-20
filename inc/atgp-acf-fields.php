@@ -710,8 +710,8 @@ if( function_exists('acf_add_local_field_group') ):
                                     'id' => '',
                                 ),
                                 'choices' => array(
-                                    '-30€ sur le 3eme adhérent d’une même famille.(1 seule réduction par famille)' => '-30€ sur le 3eme adhérent d’une même famille.(1 seule réduction par famille)',
-                                    '-10% pour un membre Conseil d’administration, ou du Bureau de l’association' => '-10% pour un membre Conseil d’administration, ou du Bureau de l’association',
+                                    'atgp-reduc-1' => '-30€ sur le 3eme adhérent d’une même famille.(1 seule réduction par famille)',
+                                    'atgp-reduc-2' => '-10% pour un membre Conseil d’administration, ou du Bureau de l’association',
                                 ),
                                 'allow_custom' => 0,
                                 'default_value' => array(
@@ -733,7 +733,7 @@ if( function_exists('acf_add_local_field_group') ):
                                         array(
                                             'field' => 'field_60c004ca97a90',
                                             'operator' => '==',
-                                            'value' => '-30€ sur le 3eme adhérent d’une même famille.(1 seule réduction par famille)',
+                                            'value' => 'atgp-reduc-1',
                                         ),
                                     ),
                                 ),
