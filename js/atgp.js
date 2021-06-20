@@ -4,14 +4,6 @@
 
 jQuery(document).ready(function(){
 
-    // init 
-    // jQuery('#acf-field_60c359e1ee3a0-field_60bfeadffedbc').focusout(function() {
-    //     // alert( "Handler for .focus() called." );
-    //     var datnat = jQuery('#acf-field_60c359e1ee3a0-field_60bfeadffedbc').val();
-    //     console.log(datnat);
-        
-    // });
-
     // LASTNAME
     jQuery('#acf-field_60c359e1ee3a0-field_60bfea45fedb9').on( "blur", function() {
         jQuery('#acf-field_60c359e1ee3a0-field_60bfea45fedb9').val(function( i, val ) {
@@ -46,7 +38,6 @@ jQuery(document).ready(function(){
             /************************************************************************************************* */
             var groupSelected = [];
             var groupID;
-        // var groupID = jQuery( ".acf-taxonomy-field input:checked" ).val();
             jQuery( ".acf-field-60c001b397a8a .acf-taxonomy-field input:checked" ).each(function() 
             {
             // add $(this).val() to your array
@@ -54,82 +45,82 @@ jQuery(document).ready(function(){
                 console.log(groupID);
                 /* LOCAL */
                 
-                switch(groupID) {
-                    case "11":
-                        var groupPrice = 165;
-                        break;
-                    case "12":
-                        var groupPrice = 80;
-                        break;
-                    case "10":
-                        var groupPrice = 235;
-                        break;
-                    case "9":
-                        var groupPrice = 195;
-                        break;
-                    case "8":
-                        var groupPrice = 195;
-                        break;
-                    case "7":
-                        var groupPrice = 195;
-                        break;
-                    case "6":
-                        var groupPrice = 195;
-                        break;
-                    case "5":
-                        var groupPrice = 195;
-                        break;
-                    case "4":
-                        var groupPrice = 80;
-                        break;
-                    case "3":
-                        var groupPrice = 195;
-                        break;
-                    case "2":
-                        var groupPrice = 195;
-                        break;            
-                    default:
-                        var groupPrice = 0;
-                   }
-                
-                /* ONLINE */
-                // switch(groupID) { 
-                //     case "51":
+                // switch(groupID) {
+                //     case "11":
                 //         var groupPrice = 165;
                 //         break;
-                //     case "52":
+                //     case "12":
                 //         var groupPrice = 80;
                 //         break;
-                //     case "59":
+                //     case "10":
                 //         var groupPrice = 235;
                 //         break;
-                //     case "53":
+                //     case "9":
                 //         var groupPrice = 195;
                 //         break;
-                //     case "54":
+                //     case "8":
                 //         var groupPrice = 195;
                 //         break;
-                //     case "55":
+                //     case "7":
                 //         var groupPrice = 195;
                 //         break;
-                //     case "56":
+                //     case "6":
                 //         var groupPrice = 195;
                 //         break;
-                //     case "57":
+                //     case "5":
                 //         var groupPrice = 195;
                 //         break;
-                //     case "58":
+                //     case "4":
                 //         var groupPrice = 80;
                 //         break;
-                //     case "60":
+                //     case "3":
                 //         var groupPrice = 195;
                 //         break;
-                //     case "61":
+                //     case "2":
                 //         var groupPrice = 195;
                 //         break;            
                 //     default:
                 //         var groupPrice = 0;
                 //    }
+                
+                /* ONLINE */
+                switch(groupID) { 
+                    case "51":
+                        var groupPrice = 165;
+                        break;
+                    case "52":
+                        var groupPrice = 80;
+                        break;
+                    case "59":
+                        var groupPrice = 235;
+                        break;
+                    case "53":
+                        var groupPrice = 195;
+                        break;
+                    case "54":
+                        var groupPrice = 195;
+                        break;
+                    case "55":
+                        var groupPrice = 195;
+                        break;
+                    case "56":
+                        var groupPrice = 195;
+                        break;
+                    case "57":
+                        var groupPrice = 195;
+                        break;
+                    case "58":
+                        var groupPrice = 80;
+                        break;
+                    case "60":
+                        var groupPrice = 195;
+                        break;
+                    case "61":
+                        var groupPrice = 195;
+                        break;            
+                    default:
+                        var groupPrice = 0;
+                   }
                 
                 groupSelected.push(groupPrice);
             });
@@ -162,24 +153,15 @@ jQuery(document).ready(function(){
             var reduc2=0;
             var atgp_reduc_montant=0;
             groupSelected.forEach(function(item, index){
-                // console.log(item, index);
-                // if ($atgp_reduc_type == "fixe") {
-                //     $type_reduction="€";
-                //     $cout_reduction_total=$cout_reduction_total+$atgp_reduc_montant;
-                //  } else {
-                //     $type_reduction="%";
-                //     $reduc_pourcentage=$atgp_reduc_montant;
-                //  }
+
                 switch(item) {
                     case 30:
                         reduc1 = -30;
                         reduc=reduc1;
-                        // console.log(reduc1);
                         break;
                     case 10:
                         reduc2 = 10/100;
                         reduc=10;
-                        // console.log(reduc2);
                         typeReduc="%";
                         break;          
                     default:
@@ -192,8 +174,6 @@ jQuery(document).ready(function(){
                             reduc=item;
                         }
                         
-                        
-                        // console.log(totalCours);
                    } 
 
                 jQuery('#atgp-display-total #groupPriceArray').append( "<span id=\""+ index +"\"> > "+ reduc + ""+ typeReduc +" </span>");
@@ -202,13 +182,8 @@ jQuery(document).ready(function(){
             total=totalCours-(totalCours*reduc2)+reduc1;
             jQuery('#atgp-display-total #TOTAL').append("<span>" + total + " €</span>");
             jQuery('#acf-field_60c35ab2e3911-field_60c005e597a91').val(total);
-        // jQuery('#atgp-display-total').append( "<p>"+ groupPrice + "</p>" );
       });
 
-      
-      // cheque 1 = jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33c2a84300')
-      // cheque 2 = jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d3184303') 
-      // cheque 3 = jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d9584305')
       var cheque1=0;
       var cheque2=0;
       var cheque3=0;
@@ -233,7 +208,9 @@ jQuery(document).ready(function(){
             jQuery('#atgp-display-total #alert').append("<span>Le montant des chèques n'est pas égal au montant total ("+total+ ")</span>");
             jQuery('.acf-form-submit input[type="submit"]').prop('disabled', true);
         } else {
+            if(totalCheque != 0) {
             jQuery('.acf-form-submit input[type="submit"]').prop('disabled', false);
+            }
         }
       });
 

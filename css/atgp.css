@@ -123,15 +123,11 @@ section[id^="atgp_"] {
 
 /** SUBMIT FORM **/
 #register-form .acf-form-submit {
-    position: fixed;
-    bottom:40px;
-    right:20px;
-    z-index: 101;
-    
+    text-align: center;
 }
-#register-form .acf-form-submit .acf-button {
+#register-form .acf-button  {
     border-radius: 20px;
-    /* background-color: var(--theme-color); */
+    background-color: var(--theme-color);
     color: white;
     padding: 10px 30px;
     text-decoration: none;
@@ -139,8 +135,22 @@ section[id^="atgp_"] {
     font-size: 1rem;
 }
 
-
-
-#register-form form:not(.v-form) .acf-form-submit .acf-button[type="submit"]:disabled {
+#register-form .acf-form-submit .acf-button:disabled {
     background:#CCC;
+}
+
+/** MESSAGE AFTER SUBMIT  **/
+#message.updated {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+    background: #00e4bc;
+    font-size: 1.5rem;
+    color:white;
+    z-index:100;
+}
+
+#message.updated p {
+    text-align: center;
 }

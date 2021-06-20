@@ -37,7 +37,7 @@ while ( have_posts() ) : the_post();
                      'post_status'   => 'publish',
                   ),
                   'submit_value'  => 'Valider le dossier',
-                  'updated_message' => __("Inscription enregistrée", 'acf'),
+                  'updated_message' => __("Pré-inscription enregistrée,<br>consultez votre boite mail pour télécharger le dossier", 'acf'),
                   'label_placement' => 'left',
                   'instruction_placement' => 'field',  // label
                   // 'post_content' => true,

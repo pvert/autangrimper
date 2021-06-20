@@ -71,7 +71,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_nom',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -90,7 +90,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_prenom',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -109,7 +109,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_sexe',
                         'type' => 'radio',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -133,7 +133,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_date_de_naissance',
                         'type' => 'date_picker',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -150,7 +150,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_adresse',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -169,7 +169,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_code_postal',
                         'type' => 'number',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -190,7 +190,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_ville',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -209,7 +209,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_tel',
                         'type' => 'number',
                         'instructions' => 'Le téléphone mobile est nécessaire pour recevoir les infos du club par sms',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -250,8 +250,9 @@ if( function_exists('acf_add_local_field_group') ):
                         'label' => 'Courriel',
                         'name' => 'atgp_courriel',
                         'type' => 'email',
-                        'instructions' => 'L’adresse mail est nécessaire pour que vous puissiez recevoir la licence sportive et	les informations du club.',
-                        'required' => 0,
+                        'instructions' => 'L’adresse mail est nécessaire pour que vous puissiez recevoir la licence sportive et les informations du club.
+    Le dossier à imprimer sera envoyé à cette adresse.',
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -303,7 +304,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_nom_urgence',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -322,7 +323,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_prenom_urgence',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -341,7 +342,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_tel_urgence',
                         'type' => 'number',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -362,7 +363,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_fixe_urgence',
                         'type' => 'number',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -400,7 +401,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_type_dadhesion',
                         'type' => 'radio',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -553,7 +554,9 @@ if( function_exists('acf_add_local_field_group') ):
                             'class' => '',
                             'id' => '',
                         ),
-                        'message' => '<a href="https://autangrimper.fr/horaires-calendriers/" target="_blank">Voir horaires et références en cliquant ici</a> (ouverture dans une nouvelle fenêtre)',
+                        'message' => '<a href="https://autangrimper.fr/horaires-calendriers/" target="_blank">Voir horaires et références en cliquant ici</a> (ouverture dans une nouvelle fenêtre).
+    Si vous choisissez une inscription sur 2 créneaux, 60€ seront automatiquement retirés du prix (vous ne payez la licence qu\'une fois).
+    <strong>Après avoir choisi votre (vos) créneaux, cliquez sur le bouton "Mettre à jour le montant" en bas de page.</strong>',
                         'new_lines' => 'wpautop',
                         'esc_html' => 0,
                     ),
@@ -563,7 +566,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_group',
                         'type' => 'taxonomy',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -683,7 +686,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'label' => 'Réductions',
                         'name' => 'atgp_reductions',
                         'type' => 'group',
-                        'instructions' => '',
+                        'instructions' => '<strong>Après avoir choisi une éventuelle réduction ci-dessous, cliquez sur le bouton "Mettre à jour le montant" en bas de page.</strong>',
                         'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
@@ -707,8 +710,8 @@ if( function_exists('acf_add_local_field_group') ):
                                     'id' => '',
                                 ),
                                 'choices' => array(
-                                    'atgp-reduc-1' => '-30€ sur le 3eme adhérent d’une même famille.(1 seule réduction par famille)',
-                                    'atgp-reduc-2' => '-10% pour un membre Conseil d’administration, ou du Bureau de l’association',
+                                    '-30€ sur le 3eme adhérent d’une même famille.(1 seule réduction par famille)' => '-30€ sur le 3eme adhérent d’une même famille.(1 seule réduction par famille)',
+                                    '-10% pour un membre Conseil d’administration, ou du Bureau de l’association' => '-10% pour un membre Conseil d’administration, ou du Bureau de l’association',
                                 ),
                                 'allow_custom' => 0,
                                 'default_value' => array(
@@ -730,7 +733,7 @@ if( function_exists('acf_add_local_field_group') ):
                                         array(
                                             'field' => 'field_60c004ca97a90',
                                             'operator' => '==',
-                                            'value' => 'atgp-reduc-1',
+                                            'value' => '-30€ sur le 3eme adhérent d’une même famille.(1 seule réduction par famille)',
                                         ),
                                     ),
                                 ),
@@ -758,7 +761,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'label' => 'Total',
                         'name' => 'atgp_total',
                         'type' => 'number',
-                        'instructions' => 'Tarif cours + Assurances - réduction(s)',
+                        'instructions' => 'Tarif cours - réduction(s)',
                         'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
@@ -767,7 +770,7 @@ if( function_exists('acf_add_local_field_group') ):
                             'id' => '',
                         ),
                         'default_value' => '',
-                        'placeholder' => '',
+                        'placeholder' => 'Cliquez sur le bouton "Mettre à jour le montant en pied de page"',
                         'prepend' => '',
                         'append' => '',
                         'min' => '',
@@ -780,8 +783,8 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_paiement',
                         'type' => 'group',
                         'instructions' => '<strong>Le paiement se fait exclusivement par chèque</strong>, et peut être réparti sur 3 avec l\'échéancier suivant :
-    Chèque 1, Septembre : <strong>Montant minimum de 80€</strong>
-    Chèque 2, Début Novembre
+    Chèque 1, Septembre : <strong>Montant minimum de 80€</strong><br>
+    Chèque 2, Début Novembre<br>
     Chèque 3, Début Février',
                         'required' => 0,
                         'conditional_logic' => 0,
@@ -797,8 +800,9 @@ if( function_exists('acf_add_local_field_group') ):
                                 'label' => 'Montant chèque 1',
                                 'name' => 'atgp_echeancier_1_montant',
                                 'type' => 'number',
-                                'instructions' => 'Chèque 1, Septembre : <strong>Montant minimum de 80€</strong>',
-                                'required' => 0,
+                                'instructions' => 'Chèque 1, Septembre : <strong>Montant minimum de 80€</strong><br>
+    <strong>cliquez sur le bouton "Mettre à jour le montant" en bas de page, avant de saisir le montant du chèque</strong>',
+                                'required' => 1,
                                 'conditional_logic' => 0,
                                 'wrapper' => array(
                                     'width' => '',
@@ -819,7 +823,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'name' => 'atgp_echeancier_1_numero',
                                 'type' => 'number',
                                 'instructions' => 'Numéro du chèque',
-                                'required' => 0,
+                                'required' => 1,
                                 'conditional_logic' => 0,
                                 'wrapper' => array(
                                     'width' => '',
@@ -888,7 +892,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'name' => 'atgp_echeancier_2_numero',
                                 'type' => 'number',
                                 'instructions' => 'Numéro du chèque 2',
-                                'required' => 0,
+                                'required' => 1,
                                 'conditional_logic' => array(
                                     array(
                                         array(
@@ -946,12 +950,17 @@ if( function_exists('acf_add_local_field_group') ):
                                 'name' => 'atgp_echeancier_3_numero',
                                 'type' => 'number',
                                 'instructions' => 'Numéro du chèque 3',
-                                'required' => 0,
+                                'required' => 1,
                                 'conditional_logic' => array(
                                     array(
                                         array(
                                             'field' => 'field_60c33d1584302',
                                             'operator' => '==',
+                                            'value' => '1',
+                                        ),
+                                        array(
+                                            'field' => 'field_60c33d9584305',
+                                            'operator' => '>',
                                             'value' => '1',
                                         ),
                                     ),
@@ -979,7 +988,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'atgp_conditions',
                 'type' => 'true_false',
                 'instructions' => 'Je reconnais avoir pris connaissance du <a href="https://autangrimper.fr/reglement-interieur/" target="_blank" title="consulter le règlement intérieur">règlement intérieur</a> disponible et en accepte les conditions de celui-ci.',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -1118,6 +1127,25 @@ if( function_exists('acf_add_local_field_group') ):
                         'maxlength' => '',
                     ),
                     array(
+                        'key' => 'field_60c92e92e0a92',
+                        'label' => 'Label',
+                        'name' => 'atgp_reduc_label',
+                        'type' => 'text',
+                        'instructions' => '<em>Exemple : 3eme adhérent d\'une même famille</em>',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
                         'key' => 'field_60c62adb0e2fe',
                         'label' => 'Type de réduction',
                         'name' => 'atgp_reduc_type',
@@ -1147,25 +1175,6 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'atgp_reduc_montant',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => '',
-                        ),
-                        'default_value' => '',
-                        'placeholder' => '',
-                        'prepend' => '',
-                        'append' => '',
-                        'maxlength' => '',
-                    ),
-                    array(
-                        'key' => 'field_60c92e92e0a92',
-                        'label' => 'Label',
-                        'name' => 'atgp_reduc_label',
-                        'type' => 'text',
-                        'instructions' => '<em>Exemple : 3eme adhérent d\'une même famille</em>',
                         'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
