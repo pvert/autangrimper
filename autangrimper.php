@@ -7,7 +7,7 @@
  * Author URI:      https://github.com/pvert/
  * Text Domain:     atgp
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         1.0.0
  * @package         atgp
  */
 
