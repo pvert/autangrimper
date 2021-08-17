@@ -42,7 +42,7 @@ jQuery(document).ready(function(){
             {
             // add $(this).val() to your array
                 groupID = jQuery(this).val();
-                console.log(groupID);
+                // console.log(groupID);
                 /* LOCAL */
                 
                 // switch(groupID) {
@@ -110,14 +110,23 @@ jQuery(document).ready(function(){
                         var groupPrice = 195;
                         break;
                     case "58":
-                        var groupPrice = 80;
+                        var groupPrice = 195;
                         break;
                     case "60":
                         var groupPrice = 195;
                         break;
                     case "61":
                         var groupPrice = 195;
-                        break;            
+                        break; 
+                    case "71":
+                        var groupPrice = 195;
+                        break;     
+                    case "72":
+                        var groupPrice = 195;
+                        break;    
+                    case "73":
+                        var groupPrice = 195;
+                        break;   
                     default:
                         var groupPrice = 0;
                    }
@@ -165,7 +174,7 @@ jQuery(document).ready(function(){
                         typeReduc="%";
                         break;          
                     default:
-                        console.log("switch Index" + index);
+                        // console.log("switch Index" + index);
                         if (index == 1) {
                             totalCours = totalCours + item - 60;
                             reduc=item - 60;
@@ -178,7 +187,7 @@ jQuery(document).ready(function(){
 
                 jQuery('#atgp-display-total #groupPriceArray').append( "<span id=\""+ index +"\"> > "+ reduc + ""+ typeReduc +" </span>");
             });
-            console.log(totalCours + "-(" + totalCours+ "*" + reduc2 +")+"+reduc1+ "");
+            // console.log(totalCours + "-(" + totalCours+ "*" + reduc2 +")+"+reduc1+ "");
             total=totalCours-(totalCours*reduc2)+reduc1;
             jQuery('#atgp-display-total #TOTAL').append("<span>" + total + " €</span>");
             jQuery('#acf-field_60c35ab2e3911-field_60c005e597a91').val(total);
@@ -189,9 +198,10 @@ jQuery(document).ready(function(){
       var cheque3=0;
 
       jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33c2a84300, #acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d3184303, #acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d9584305').focusout(function() {
-        var cheque1 = parseInt(jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33c2a84300').val());
-        var cheque2 = parseInt(jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d3184303').val());
-        var cheque3 = parseInt(jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d9584305').val());
+        var cheque1 = parseFloat(jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33c2a84300').val());
+        var cheque2 = parseFloat(jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d3184303').val());
+        var cheque3 = parseFloat(jQuery('#acf-field_60c35ab2e3911-field_60c32a5eda844-field_60c33d9584305').val());
+        console.log("cheque1:" + cheque1 +" ; cheque2: "+ cheque2 +" ; cheque3: "+ cheque3);
         jQuery('#atgp-display-total #alert span').remove();
         totalCheque = cheque1;
         if (cheque2) {
@@ -213,8 +223,6 @@ jQuery(document).ready(function(){
             }
         }
       });
-
-
 });
 
 

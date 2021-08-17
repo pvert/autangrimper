@@ -99,6 +99,11 @@ function atgp_title_saver( $post_id ) {
     // $post_url = get_permalink( $post_id );
     $linkToPDF_generator="../pdf/printpdf.php?postID=".$post_id;
     $message.= "<p>".plugins_url($linkToPDF_generator, __FILE__)."</p>\r\n";
+
+    // QS-SANTE
+    $linkToPDF_QS_SPORT="../files/questionnaire_medical.pdf";
+    $message.="<p>Pour les renouvellements de licence, vous devez joindre au dossier le questionnaire santé QS-SPORT à télécharger et imprimer à l'adresse suivante : </p>\r\n";
+    $message.= "<p>".plugins_url($linkToPDF_QS_SPORT, __FILE__)."</p>\r\n";
     // $message.= "<p>Votre mot de passe : <strong>".$etat_civil['atgp_code_postal']."</strong></p>\r\n";
 
     $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec certificat médical, et chéque(s)"."</u></strong></p>\r\n";
