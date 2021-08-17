@@ -7,14 +7,20 @@
  * Author URI:      https://github.com/pvert/
  * Text Domain:     atgp
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         1.0.0
  * @package         atgp
  */
 
 // LOAD CSS & SCRIPTS 
 function atgp_scripts() {
-    wp_register_style( 'prefix-style', plugins_url('css/atgp.css', __FILE__) );
-    wp_enqueue_style( 'prefix-style' );
+    wp_register_style( 'atgp-style', plugins_url('css/atgp.css', __FILE__) );
+    wp_enqueue_style( 'atgp-style' );
+    // autocomplete form member register form
+    if (( get_post_type() == 'atgp-member' ) && (get_post_field( 'post_name', $post_id ) == "atgp-inscription")){
+        $atgp_src_script = plugins_url().'/autangrimper/js/atgp.js';    
+        wp_enqueue_script( 'atgp-script', $atgp_src_script,  array ( 'jquery', 'wp-api' ));
+    }
+
 }
  add_action('wp_enqueue_scripts','atgp_scripts');
 
@@ -28,7 +34,7 @@ array_push($thumbnailSupport, 'atgp-member');
 include 'taxonomies/atgp-ctx-groupe.php';
 include 'taxonomies/atgp-ctx-type.php';
 include 'taxonomies/atgp-ctx-status.php';
-include 'taxonomies/atgp-ctx-reductions.php';
+// include 'taxonomies/atgp-ctx-reductions.php';
 
 // Active thumbnail support
 function atgp_thumbnail_support() {
