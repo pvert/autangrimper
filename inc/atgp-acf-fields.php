@@ -145,6 +145,25 @@ if( function_exists('acf_add_local_field_group') ):
                         'first_day' => 1,
                     ),
                     array(
+                        'key' => 'field_60bfeb45fedba',
+                        'label' => 'Lieu de naissance',
+                        'name' => 'atgp_lieu_naissance',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 1,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
                         'key' => 'field_60bfeb1bfedbd',
                         'label' => 'Adresse',
                         'name' => 'atgp_adresse',
@@ -489,7 +508,7 @@ if( function_exists('acf_add_local_field_group') ):
                             ),
                             array(
                                 'key' => 'field_60c35c6e0470d',
-                                'label' => 'Date du certificat',
+                                'label' => 'Date du certificat ou du questionnaire santé',
                                 'name' => 'atgp_group_adhesion_certificat_date',
                                 'type' => 'date_picker',
                                 'instructions' => '',
@@ -557,7 +576,7 @@ if( function_exists('acf_add_local_field_group') ):
                         ),
                         'message' => '<p><a href="https://autangrimper.fr/horaires-calendriers/" target="_blank">Voir horaires et références en cliquant ici</a> (ouverture dans une nouvelle fenêtre).</p>
     <p>Si vous choisissez une inscription sur 2 créneaux, 60€ seront automatiquement retirés du prix (vous ne payez la licence qu\'une fois).</p>
-    <p>Tarifs :<ul><li>Adultes: 165€</li><li>Groupes enfants : 195€</li><li>Perfectionnement: 235€</li><li>Enfant libre: 80€ </li></ul></p>
+    <p>Tarifs :<ul><li>Adultes: 180€</li><li>Groupes enfants : 225€</li><li>Perfectionnement: 265€</li><li>Enfant libre: 90€ </li></ul></p>
     <p style="padding:10px;background:var(--theme-color);color:#FFFFFF;">Après avoir choisi votre (vos) créneaux, cliquez sur le bouton "Mettre à jour le montant" en bas de page.</p>',
                         'new_lines' => 'wpautop',
                         'esc_html' => 0,
