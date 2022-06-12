@@ -68,7 +68,7 @@ $linkToPDF_generator="pdf/printpdf.php?postID=".get_the_id();
                      <p>Prénom : <?php echo $etat_civil['atgp_prenom']; ?></p>
                      <p>Sexe : <?php echo $etat_civil['atgp_sexe']; ?></p>
                      <p>Date de naissance : <?php echo $etat_civil['atgp_date_de_naissance']; ?></p>
-                     <p>Lieu de naissance : <?php echo $etat_civil['atgp_lieu_naissance']; ?></p>
+                     <p>Lieu de naissance : <?php echo $etat_civil['atgp_lieu_de_naissance']; ?></p>
                      <p>Adresse : <?php echo $etat_civil['atgp_adresse']; ?></p>
                      <p>Code postal : <?php echo $etat_civil['atgp_code_postal']; ?></p>
                      <p>Ville : <?php echo $etat_civil['atgp_ville']; ?></p>

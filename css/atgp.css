@@ -96,14 +96,10 @@ section[id^="atgp_"] {
         bottom:52px; 
     }
 }
-@media (min-width:686px) {
-    #atgp-display-total {
-        bottom:0; 
-    }
-}
+
 @media (min-width:767px) {
     #atgp-display-total {
-        bottom:35%; 
+        bottom:0;
     }
 }
 
