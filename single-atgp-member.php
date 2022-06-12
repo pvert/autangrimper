@@ -68,6 +68,7 @@ $linkToPDF_generator="pdf/printpdf.php?postID=".get_the_id();
                      <p>Prénom : <?php echo $etat_civil['atgp_prenom']; ?></p>
                      <p>Sexe : <?php echo $etat_civil['atgp_sexe']; ?></p>
                      <p>Date de naissance : <?php echo $etat_civil['atgp_date_de_naissance']; ?></p>
+                     <p>Lieu de naissance : <?php echo $etat_civil['atgp_lieu_naissance']; ?></p>
                      <p>Adresse : <?php echo $etat_civil['atgp_adresse']; ?></p>
                      <p>Code postal : <?php echo $etat_civil['atgp_code_postal']; ?></p>
                      <p>Ville : <?php echo $etat_civil['atgp_ville']; ?></p>
@@ -90,7 +91,7 @@ $linkToPDF_generator="pdf/printpdf.php?postID=".get_the_id();
                      <?php
                      }
                      ?>
-                     <p>Certificat médical établit le : <?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_date'];?></p>
+                     <p>Certificat médical ou Questionnaire santé établit le : <?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_date'];?></p>
                      <p>Médécin  : <?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_medecin'];?></p> 
                   </div>       
                </section>
@@ -246,8 +247,9 @@ $linkToPDF_generator="pdf/printpdf.php?postID=".get_the_id();
                            //    $atgp_total=$atgp_total-($atgp_total*($reduc_pourcentage/100));
                            //    }
                            ?>
-                           <li><?php echo $cout_cours_total."-(".$cout_cours_total."*".$reduc_pourcentage.")-".$reduc_fixe;?></li>
-                           </li>
+                           <!-- <li> -->
+                              <?php //echo $cout_cours_total."-(".$cout_cours_total."*".$reduc_pourcentage.")-".$reduc_fixe;?>
+                           <!-- </li> -->
                            <li>
                               <span>Coût total : </span>
                               <span><?php echo $atgp_total; ?> €</span>
