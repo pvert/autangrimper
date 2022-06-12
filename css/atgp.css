@@ -83,7 +83,7 @@ section[id^="atgp_"] {
     right: 0;
     width: 100%;
     min-height: 50px;
-    background: #666;
+    background: coral;
     color: #FFF;
     z-index: 100;
     display: flex;
@@ -101,6 +101,11 @@ section[id^="atgp_"] {
         bottom:0; 
     }
 }
+@media (min-width:767px) {
+    #atgp-display-total {
+        bottom:35%; 
+    }
+}
 
 #atgp-display-total #groupPriceArray {
     display: flex;
@@ -115,10 +120,11 @@ section[id^="atgp_"] {
     text-align: center;
     margin-top: 10px;
     align-self: flex-end;
+    display: block;
 }
 
 #atgp-display-total #alert {
-    background:coral;
+    background:#333;
 }
 
 /** SUBMIT FORM **/

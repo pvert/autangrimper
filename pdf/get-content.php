@@ -118,7 +118,9 @@ ol li {
     <table class="etatCivil" cellpadding="0" cellspacing="0" width="700">
         <tr>
             <td valign="top" class="w300">
-                <p>Date de naissance : <strong class="bigtext"><?php echo $etat_civil['atgp_date_de_naissance']; ?></strong></p>
+                <p>Date de naissance : <strong class="bigtext"><?php echo $etat_civil['atgp_date_de_naissance']; ?></strong><br>
+                <small><?php echo $etat_civil['atgp_lieu_de_naissance']; ?></small>
+                </p>
                 <p>Sexe : <?php echo $etat_civil['atgp_sexe']; ?></p>
                 <p>Adresse :<br><?php echo $etat_civil['atgp_adresse']; ?>, <?php echo $etat_civil['atgp_code_postal']; ?> <?php echo $etat_civil['atgp_ville']; ?></p>
                 <p>Tel mobile : <strong class="bigtext"><?php echo $etat_civil['atgp_tel']; ?></strong></p>
@@ -159,7 +161,7 @@ ol li {
                 <?php
                 }
                 ?>
-                <p>Certificat médical établit le : <strong><?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_date'];?></strong></p>
+                <p>Certificat médical ou Questionnaire santé établit le : <strong><?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_date'];?></strong></p>
                 <p>Médecin : <?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_medecin'];?></p>
                 
                 
