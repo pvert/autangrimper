@@ -147,7 +147,7 @@ if( function_exists('acf_add_local_field_group') ):
                     array(
                         'key' => 'field_60bfeb45fedba',
                         'label' => 'Lieu de naissance',
-                        'name' => 'atgp_lieu_naissance',
+                        'name' => 'atgp_lieu_de_naissance',
                         'type' => 'text',
                         'instructions' => '',
                         'required' => 1,
