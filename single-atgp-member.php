@@ -117,6 +117,7 @@ $post_id=get_the_id();
                      <h3>Au cas où un groupe soit complet, vos voeux dans l'ordre de préférence:</h3>       
                      <ol>
                      <?php 
+                     $voeuxList= array();
                      $voeuxList=$cours['atgp_group_voeux'];
                         foreach ($voeuxList as $voeux) {
                         ?>
