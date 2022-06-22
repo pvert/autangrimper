@@ -143,12 +143,11 @@ ol li {
                 <p>Autre(s) voeux :</p>       
                 <ol>
                 <?php 
-                $voeuxList= array();
                 $voeuxList=$cours['atgp_group_voeux'];               
                 if (!empty($voeuxList)) {
                     foreach ($voeuxList as $voeux) {
                     ?>
-                        <li><?php echo $voeux->name;?></li>
+                        <li><?php if($voeux->name){echo $voeux->name;}?></li>
                     <?php
                     } 
                 }
