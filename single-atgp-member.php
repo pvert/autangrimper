@@ -118,13 +118,13 @@ $post_id=get_the_id();
                      <ol>
                      <?php 
                      $voeuxList=$cours['atgp_group_voeux'];
-                     if (!empty($voeuxList)) {
-                        foreach ($voeuxList as $voeux) {
-                        ?>
-                           <li><?php echo $voeux->name;?><br><?php var_dump($voeux);?></li>
-                        <?php
-                        } 
-                     }
+                     foreach ($voeuxList as $voeux) {
+                        if ($voeux){
+                     ?>
+                        <li><?php echo $voeux->name;?></li>
+                     <?php
+                        }
+                     } 
                      ?>
                      </ol>
                   </div>
