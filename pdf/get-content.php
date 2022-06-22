@@ -92,7 +92,7 @@ ol li {
 </style>
 <page orientation="portrait" format="A4" style="font-size: 12px" backtop="7mm" backbottom="7mm" backleft="7mm" backright="7mm">
     <page_header> 
-        <p>DOSSIER DE PRE-INSCRIPTION AUTAN GRIMPER</p>         
+        <p>DOSSIER DE PRE-INSCRIPTION AUTAN GRIMPER 2022-2023</p>         
     </page_header> 
     <?php
     $etat_civil=  get_field('atgp_group_etat_civil', $post_id);
@@ -310,7 +310,7 @@ ol li {
     <page_footer> 
     <p><small>Version : <?php echo date('ymj-H-i-s');?></small><br>
     Date de l'inscription en ligne :<?php echo get_the_date( 'j/m/y H:i:s', $post_id ); ?><br>
-    <small>AUTAN GRIMPER, Salle Liv Sansoz 177 Chemin de la forêt 31660 BESSIERES, Renseignements : 06 83 30 89 87, http://www.autangrimper.fr</small>
+    <small>AUTAN GRIMPER, Salle Liv Sansoz 177 Chemin de la forêt 31660 BESSIERES, Renseignements : 06 83 30 89 87, https://www.autangrimper.fr</small>
     </p>    
     
     </page_footer>
