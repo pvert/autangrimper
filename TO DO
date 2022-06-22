@@ -7,3 +7,5 @@ Chaque année :
 - mettre à jour les nouveaux ID de groupe dans js/atgp.js
   
 - changer les QS médicaux (adultes / mineurs) sur le plugin
+
+- pdf/get-content.php : saison en cours
