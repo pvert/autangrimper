@@ -7,7 +7,7 @@
  * Author URI:      https://github.com/pvert/
  * Text Domain:     atgp
  * Domain Path:     /languages
- * Version:         1.1.3
+ * Version:         1.2.0
  * @package         atgp
  */
 
@@ -16,6 +16,7 @@ function atgp_scripts() {
     wp_register_style( 'atgp-style', plugins_url('css/atgp.css', __FILE__) );
     wp_enqueue_style( 'atgp-style' );
     // autocomplete form member register form
+    $post_id=get_the_id();
     if (( get_post_type() == 'atgp-member' ) && (get_post_field( 'post_name', $post_id ) == "atgp-inscription")){
         $atgp_src_script = plugins_url().'/autangrimper/js/atgp.js';    
         wp_enqueue_script( 'atgp-script', $atgp_src_script,  array ( 'jquery', 'wp-api' ));
