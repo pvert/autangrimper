@@ -147,7 +147,7 @@ ol li {
                 if (!empty($voeuxList)) {
                     foreach ($voeuxList as $voeux) {
                     ?>
-                        <li><?php if($voeux->name){echo $voeux->name;}?></li>
+                        <li><?php echo $voeux->name;?></li>
                     <?php
                     } 
                 }

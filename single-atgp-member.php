@@ -121,7 +121,7 @@ $post_id=get_the_id();
                      if (!empty($voeuxList)) {
                         foreach ($voeuxList as $voeux) {
                         ?>
-                           <li><?php if($voeux->name){echo $voeux->name;}?></li>
+                           <li><?php echo $voeux->name;?><br><?php var_dump($voeux);?></li>
                         <?php
                         } 
                      }
