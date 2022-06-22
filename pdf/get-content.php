@@ -143,6 +143,7 @@ ol li {
                 <p>Autre(s) voeux :</p>       
                 <ol>
                 <?php 
+                $voeuxList= array();
                 $voeuxList=$cours['atgp_group_voeux'];
                 foreach ($voeuxList as $voeux) {
                 ?>
