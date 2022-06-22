@@ -22,7 +22,8 @@ try {
     $html2pdf = new Html2Pdf('P', 'A4', 'fr');
     $html2pdf->setDefaultFont('Arial');
     $html2pdf->writeHTML($content);
-    $html2pdf->output('Autan-grimper_'.get_field('atgp_nom').'inscription-'.$ID.'.pdf');
+    
+    $html2pdf->output('Autan-grimper_'.get_field('atgp_nom').'inscription-'.$_GET['postID'].'.pdf');
 } catch (Html2PdfException $e) {
     $html2pdf->clean();
 

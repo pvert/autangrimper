@@ -22,6 +22,7 @@ $statusSlugRewrite = "atgp-ctx-status";
 //https://autangrimper.fr/wp-content/plugins/autangrimper/printpdf.php?postID=the_ID()
 
 $linkToPDF_generator="pdf/printpdf.php?postID=".get_the_id();
+$post_id=get_the_id();
 ?>
 <!-- L'AFFICHAGE COMMENCE ICI -->
 
