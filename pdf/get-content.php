@@ -144,12 +144,14 @@ ol li {
                 <ol>
                 <?php 
                 $voeuxList= array();
-                $voeuxList=$cours['atgp_group_voeux'];
-                foreach ($voeuxList as $voeux) {
-                ?>
-                    <li><?php echo $voeux->name;?></li>
-                <?php
-                } 
+                $voeuxList=$cours['atgp_group_voeux'];               
+                if (!empty($voeuxList)) {
+                    foreach ($voeuxList as $voeux) {
+                    ?>
+                        <li><?php echo $voeux->name;?></li>
+                    <?php
+                    } 
+                }
                 ?>
                 </ol>
             </td>
