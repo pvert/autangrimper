@@ -11,7 +11,7 @@ add_post_type_support( 'page', 'excerpt' );
 /***
  * Ajout du support des thumbnails
  */
-add_theme_support( 'post-thumbnails' );
+// add_theme_support( 'post-thumbnails' );
 
 /**
  * HOOK ON WP_INSERT_POST for members
