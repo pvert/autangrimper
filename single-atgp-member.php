@@ -191,6 +191,7 @@ $post_id=get_the_id();
                            <h3>Récapitulatif</h3>
                         <?php 
                         $i=0;
+                        $cout_cours_total=0;
                         foreach ($cours['atgp_group'] as $mainCours) {
                            $cout_cours=get_field('atgp_cours_cout', $mainCours);  
                            // Calcul du cout
@@ -227,7 +228,8 @@ $post_id=get_the_id();
                                     }
                                  endwhile;
                               }
-
+                              $reduc_fixe=0;
+                              $reduc_pourcentage=0;
                               if ($atgp_reduc_type == "fixe") {
                                  $type_reduction="€";
                                  $reduc_fixe=$atgp_reduc_montant;
