@@ -102,8 +102,10 @@ function atgp_title_saver( $post_id ) {
 
     // QS-SANTE
     $linkToPDF_QS_SPORT="../files/questionnaire_medical.pdf";
+    $linkToPDF_QS_SPORT_MINEUR="../files/questionnaire_medical_mineur.pdf";
     $message.="<p>Pour les renouvellements de licence, vous devez joindre au dossier le questionnaire santé QS-SPORT à télécharger et imprimer à l'adresse suivante : </p>\r\n";
-    $message.= "<p>".plugins_url($linkToPDF_QS_SPORT, __FILE__)."</p>\r\n";
+    $message.= "<p>Pour les adultes: ".plugins_url($linkToPDF_QS_SPORT, __FILE__)."</p>\r\n";
+    $message.= "<p>Pour les mineurs: ".plugins_url($linkToPDF_QS_SPORT_MINEUR, __FILE__)."</p>\r\n";
     // $message.= "<p>Votre mot de passe : <strong>".$etat_civil['atgp_code_postal']."</strong></p>\r\n";
 
     $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec certificat médical, et chéque(s)"."</u></strong></p>\r\n";
