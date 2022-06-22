@@ -7,7 +7,7 @@
  * Author URI:      https://github.com/pvert/
  * Text Domain:     atgp
  * Domain Path:     /languages
- * Version:         1.1.2
+ * Version:         1.1.3
  * @package         atgp
  */
 
@@ -25,10 +25,10 @@ function atgp_scripts() {
  add_action('wp_enqueue_scripts','atgp_scripts');
 
 // Prepare activation for thumbnail support for CPT
-$thumbnailSupport=array();
+// $thumbnailSupport=array();
 
 include 'post-types/atgp-member.php';
-array_push($thumbnailSupport, 'atgp-member');
+// array_push($thumbnailSupport, 'atgp-member');
 
 
 include 'taxonomies/atgp-ctx-groupe.php';
@@ -37,11 +37,11 @@ include 'taxonomies/atgp-ctx-status.php';
 // include 'taxonomies/atgp-ctx-reductions.php';
 
 // Active thumbnail support
-function atgp_thumbnail_support() {
-    add_theme_support( 'post-thumbnails', $thumbnailSupport );
-}
+// function atgp_thumbnail_support() {
+//     add_theme_support( 'post-thumbnails', $thumbnailSupport );
+// }
 
-add_action('after_setup_theme','atgp_thumbnail_support');
+// add_action('after_setup_theme','atgp_thumbnail_support');
 
 include 'atgp-display.php';
 include 'inc/atgp-functions.php';
