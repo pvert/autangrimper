@@ -85,46 +85,46 @@ jQuery(document).ready(function(){
                 
                 /* ONLINE */
                 switch(groupID) { 
-                    case "51":
+                    case "3":
                         var groupPrice = 180;
                         break;
-                    case "52":
+                    case "18":
                         var groupPrice = 90;
                         break;
-                    case "59":
+                    case "6":
                         var groupPrice = 265;
                         break;
-                    case "53":
+                    case "7":
                         var groupPrice = 225;
                         break;
-                    case "54":
+                    case "13":
                         var groupPrice = 225;
                         break;
-                    case "55":
+                    case "9":
                         var groupPrice = 225;
                         break;
-                    case "56":
+                    case "11":
                         var groupPrice = 225;
                         break;
-                    case "57":
+                    case "15":
                         var groupPrice = 225;
                         break;
-                    case "58":
+                    case "16":
                         var groupPrice = 225;
                         break;
-                    case "60":
+                    case "17":
                         var groupPrice = 225;
                         break;
-                    case "61":
+                    case "10":
                         var groupPrice = 225;
                         break; 
-                    case "71":
+                    case "14":
                         var groupPrice = 225;
                         break;     
-                    case "72":
+                    case "12":
                         var groupPrice = 225;
                         break;    
-                    case "73":
+                    case "19":
                         var groupPrice = 225;
                         break;   
                     default:
