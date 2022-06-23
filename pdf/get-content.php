@@ -193,15 +193,15 @@ ol li {
                     } 
                     ?>
                     <?php
+                    $cout_reduction_total=0;
+                    $reduc_fixe=0;
+                    $reduc_pourcentage=0;
                     if ($cout['atgp_reductions']['atgp_type_reduction']) {
                     ?>
                     <tr>
                         <td colspan="2" class="borderb">Réduction(s)</td>
                     </tr>   
                     <?php 
-                    $cout_reduction_total=0;
-                    $reduc_fixe=0;
-                    $reduc_pourcentage=0;
                     
                         foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $coutReduction) {
                             /**
@@ -228,8 +228,6 @@ ol li {
                             // $type_reduction="%";
                             // $reduc_pourcentage=$atgp_reduc_montant;
                             // }
-                            $reduc_fixe=0;
-                            $reduc_pourcentage=0;
                             if ($atgp_reduc_type == "fixe") {
                                 $type_reduction="€";
                                 $reduc_fixe=$atgp_reduc_montant;
