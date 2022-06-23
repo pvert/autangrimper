@@ -825,8 +825,8 @@ if( function_exists('acf_add_local_field_group') ):
                         'type' => 'group',
                         'instructions' => '<strong>Le paiement se fait exclusivement par chèque</strong>, et peut être réparti sur 3 avec l\'échéancier suivant :
     Chèque 1, Septembre : <strong>Montant minimum de 80€</strong><br>
-    Chèque 2, Début Novembre<br>
-    Chèque 3, Début Février',
+    Chèque 2, Octobre<br>
+    Chèque 3, Novembre',
                         'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
@@ -903,7 +903,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'label' => 'Montant chèque 2',
                                 'name' => 'atgp_echeancier_2_montant',
                                 'type' => 'number',
-                                'instructions' => 'Chèque 2, encaissé début Novembre',
+                                'instructions' => 'Chèque 2, Octobre',
                                 'required' => 0,
                                 'conditional_logic' => array(
                                     array(
@@ -961,7 +961,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'label' => 'Montant chèque 3',
                                 'name' => 'atgp_echeancier_3_montant',
                                 'type' => 'number',
-                                'instructions' => 'Chèque 3, encaissé début Février',
+                                'instructions' => 'Chèque 3, Novembre',
                                 'required' => 0,
                                 'conditional_logic' => array(
                                     array(
