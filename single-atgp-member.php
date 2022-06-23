@@ -212,6 +212,8 @@ $post_id=get_the_id();
                            ?>
                         <?php 
                         $cout_reduction_total=0;
+                        $reduc_fixe=0;
+                        $reduc_pourcentage=0;
                         if ($cout['atgp_reductions']['atgp_type_reduction']) {
                            foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $coutReduction) {
                               /**
@@ -230,8 +232,7 @@ $post_id=get_the_id();
                                     }
                                  endwhile;
                               }
-                              $reduc_fixe=0;
-                              $reduc_pourcentage=0;
+                              
                               if ($atgp_reduc_type == "fixe") {
                                  $type_reduction="€";
                                  $reduc_fixe=$atgp_reduc_montant;

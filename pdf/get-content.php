@@ -200,6 +200,8 @@ ol li {
                     </tr>   
                     <?php 
                     $cout_reduction_total=0;
+                    $reduc_fixe=0;
+                    $reduc_pourcentage=0;
                     
                         foreach ($cout['atgp_reductions']['atgp_type_reduction'] as $coutReduction) {
                             /**
