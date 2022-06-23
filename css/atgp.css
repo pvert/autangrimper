@@ -151,8 +151,13 @@ section[id^="atgp_"] {
     font-size: 1.5rem;
     color:white;
     z-index:100;
+    padding: 5px;
 }
 
 #message.updated p {
     text-align: center;
 }
+#message.updated p strong {
+    display: block;
+    text-decoration: underline;
+  }
