@@ -108,7 +108,7 @@ function atgp_title_saver( $post_id ) {
     $message.= "<p>Pour les mineurs: ".plugins_url($linkToPDF_QS_SPORT_MINEUR, __FILE__)."</p>\r\n";
     // $message.= "<p>Votre mot de passe : <strong>".$etat_civil['atgp_code_postal']."</strong></p>\r\n";
 
-    $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec certificat médical, et chéque(s)"."</u></strong></p>\r\n";
+    $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec certificat médical, questionnaire santé et chéque(s)"."</u></strong></p>\r\n";
     $message.="<p>Autan Grimper<br>".$email."<br>".$tel."</p>";
     // $message .= $post->post_title . ": " . $post_url;
 
