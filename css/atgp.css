@@ -144,18 +144,37 @@ section[id^="atgp_"] {
 /** MESSAGE AFTER SUBMIT  **/
 #message.updated {
     position: fixed;
-    top: 25%;
-    left: 25%;
-    right: 25%;
-    background: #00e4bc;
-    font-size: 1.5rem;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.8);
+    font-size: 1rem;
     color:white;
     z-index:100;
-    padding: 5px;
+    padding: 10px;
 }
 
 #message.updated p {
     text-align: center;
+}
+#message.updated p span {
+    display:block;
+    margin-bottom:10px;
+    padding:10px;
+}
+#message.updated p span.success {
+    background: #00e4bc;
+}
+#message.updated p span.warning {
+    background: #d59432;
+}
+#message.updated p span.info {
+    background: #00b6e4;
+}
+#message.updated p span a.btn{
+    margin:0 auto;
 }
 #message.updated p strong {
     display: block;
