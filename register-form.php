@@ -37,7 +37,7 @@ while ( have_posts() ) : the_post();
                      'post_status'   => 'publish',
                   ),
                   'submit_value'  => 'Valider le dossier',
-                  'updated_message' => __("Pré-inscription enregistrée,<br>consultez votre boite mail pour télécharger le dossier <strong>(vérifiez dans vos spams)</strong>", 'acf'),
+                  'updated_message' => __("<span class=\"success\">Pré-inscription enregistrée,<br>un mail permettant de télécharger votre dossier vous a été envoyé.</span><span class=\"warning\">Attention le mail généré à la fin de la pré-inscription peut attérir dans les courriers indésirables /SPAM, pensez à vérifier.</span><span class=\"info\"><strong>Cette fiche de pré-inscription doit être imprimée, signée et retournée </strong>avec le Certificat médical OU questionnaire santé enfant et le ou les chèques, <strong>le tout déposé dans la boite aux lettres du club</strong>. <br>L’ordre de réception des dossiers déterminera l’attribution des places.</span><span><a href=\"https://autangrimper.fr\" class=\"btn\" title=\"Retour au site\">Retour au site Autan Grimper</a></span>", 'acf'),
                   'label_placement' => 'left',
                   'instruction_placement' => 'field',  // label
                   // 'post_content' => true,
