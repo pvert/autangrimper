@@ -118,7 +118,8 @@ function atgp_filter_by_custom_taxonomies( $post_type, $which ) {
 
     // A list of taxonomy slugs to filter by
     if ( 'atgp-member' == $post_type) {
-        $taxonomies = array( 'atgp-ctx-group', 'atgp-ctx-status', 'atgp-ctx-type' );
+        // $taxonomies = array( 'atgp-ctx-group', 'atgp-ctx-status', 'atgp-ctx-type' );
+        $taxonomies = array( 'atgp-ctx-group', 'atgp-ctx-status' );
     } 
 
 	foreach ( $taxonomies as $taxonomy_slug ) {
@@ -154,3 +155,28 @@ function atgp_filter_by_custom_taxonomies( $post_type, $which ) {
     }
 }
 add_action( 'restrict_manage_posts', 'atgp_filter_by_custom_taxonomies' , 10, 2);
+
+/*
+ * Add columns to members post list
+ */
+function atgp_add_acf_columns ( $columns ) {
+    return array_merge ( $columns, array ( 
+      'atgp_group_etat_civil_atgp_tel' => __ ( 'Tel' ),
+      'atgp_group_etat_civil_atgp_courriel'   => __ ( 'Mail' ) 
+    ) );
+  }
+  add_filter ( 'manage_atgp-member_posts_columns', 'atgp_add_acf_columns' );
+ /*
+ * Add columns to members post list
+ */
+function atgp_members_custom_column ( $column, $post_id ) {
+    switch ( $column ) {
+      case 'atgp_group_etat_civil_atgp_tel':
+        echo get_post_meta ( $post_id, 'atgp_group_etat_civil_atgp_tel', true );
+        break;
+      case 'atgp_group_etat_civil_atgp_courriel':
+        echo get_post_meta ( $post_id, 'atgp_group_etat_civil_atgp_courriel', true );
+        break;
+    }
+  }
+  add_action ( 'manage_atgp-member_posts_custom_column', 'atgp_members_custom_column', 10, 2 );
