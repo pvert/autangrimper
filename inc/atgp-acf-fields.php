@@ -576,7 +576,7 @@ if( function_exists('acf_add_local_field_group') ):
                         ),
                         'message' => '<p><a href="https://autangrimper.fr/horaires-calendriers/" target="_blank">Voir horaires et références en cliquant ici</a> (ouverture dans une nouvelle fenêtre).</p>
     <p>Si vous choisissez une inscription sur 2 créneaux, 60€ seront automatiquement retirés du prix (vous ne payez la licence qu\'une fois).</p>
-    <p>Tarifs :<ul><li>Adultes: 180€</li><li>Groupes enfants : 225€</li><li>Perfectionnement: 265€</li><li>Enfant libre: 90€ </li></ul></p>
+    <p>Tarifs :<ul><li>Adultes: 185€</li><li>Groupes enfants : 230€</li><li>Perfectionnement: 250€</li><li>Enfant libre: 90€ </li></ul></p>
     <p style="padding:10px;background:var(--theme-color);color:#FFFFFF;">Après avoir choisi votre (vos) créneaux, cliquez sur le bouton "Mettre à jour le montant" en bas de page.</p>',
                         'new_lines' => 'wpautop',
                         'esc_html' => 0,
@@ -717,7 +717,6 @@ if( function_exists('acf_add_local_field_group') ):
                         ),
                         'message' => '
                         <p style="padding:10px;background:var(--theme-color);color:#FFFFFF;">Après avoir choisi votre (vos) réductions, cliquez sur le bouton bleu "Mettre à jour le montant" en bas de page.</p>
-                        <p style="padding:10px;background:#ff9800;color:#000;" class="has-text-align-center has-orange-background-color has-background has-medium-font-size">Attention, le club n\'est pas affilié au <a href="https://www.sports.gouv.fr/accueil-du-site/article/le-pass-sport">Pass\'Sport</a></p>
                         ',
                         'new_lines' => 'wpautop',
                         'esc_html' => 0,
@@ -823,10 +822,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'label' => 'Mode de paiement',
                         'name' => 'atgp_paiement',
                         'type' => 'group',
-                        'instructions' => '<strong>Le paiement se fait exclusivement par chèque</strong>, et peut être réparti sur 3 avec l\'échéancier suivant :
-    Chèque 1, Septembre : <strong>Montant minimum de 80€</strong><br>
-    Chèque 2, Octobre<br>
-    Chèque 3, Novembre',
+                        'instructions' => '',
                         'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
@@ -836,6 +832,50 @@ if( function_exists('acf_add_local_field_group') ):
                         ),
                         'layout' => 'block',
                         'sub_fields' => array(
+                            array(
+                                'key' => 'field_60c44d1584302',
+                                'label' => 'Pass\'Sport',
+                                'name' => 'passsport',
+                                'type' => 'true_false',
+                                'instructions' => '<h3>Utilisation du <a href="https://www.sports.gouv.fr/accueil-du-site/article/le-pass-sport">Pass\'Sport</a></h3>
+                                Nous mettons en place la possibilité d\'utiliser le chèque Pass Sport. Si vous pensez avoir droit à cette aide, cochez la case ci-dessous.',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'message' => '',
+                                'default_value' => 0,
+                                'ui' => 1,
+                                'ui_on_text' => '',
+                                'ui_off_text' => '',
+                            ),
+                            array(
+                                'key' => 'field_60c663af9f98d',
+                                'label' => 'Chèque(s)',
+                                'name' => '',
+                                'type' => 'message',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'message' => '
+                                <p><strong>Le paiement lors de l\’inscription se fera exclusivement par chèques</strong> insérés dans le dossier d\’inscription, avec possibilité de payer 1, 2 ou 3 chèques, comme suit :</p>
+                                <ul>
+                                <li>chèque 1 de 80€ (minimum du 1er chèque qui sera encaissé en septembre) </li>
+                                <li>chèque 2 de 50€ encaissé en Octobre <br><span style="text-decoration: underline;">Si vous avez coché la case «&nbsp;Pass Sport&nbsp;»</span> lors de l\’inscription en ligne, le chèque de 50 € ne sera pas encaissé et sera déchiré (ou rendu), si nous recevons votre code « Pass sport ». <br><span style="text-decoration: underline;">Si vous n\’avez pas coché la case «&nbsp;Pass Sport&nbsp;»</span>, le montant minimum du chèque sera de 80€ .(ou solde complet si vous payez en 2 chèques).</li>
+                                <li>chèque 3 du solde de l\’inscription, encaissé en Novembre</li>
+                                </ul>
+                                ',
+                                'new_lines' => 'wpautop',
+                                'esc_html' => 0,
+                            ),
                             array(
                                 'key' => 'field_60c33c2a84300',
                                 'label' => 'Montant chèque 1',
@@ -875,7 +915,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'placeholder' => '',
                                 'prepend' => '',
                                 'append' => '',
-                                'min' => '',
+                                'min' => '50',
                                 'max' => '',
                                 'step' => '',
                             ),
