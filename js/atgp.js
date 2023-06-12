@@ -86,46 +86,46 @@ jQuery(document).ready(function(){
                 /* ONLINE */
                 switch(groupID) { 
                     case "3":
-                        var groupPrice = 180;
+                        var groupPrice = 185;
                         break;
                     case "18":
                         var groupPrice = 90;
                         break;
                     case "6":
-                        var groupPrice = 265;
+                        var groupPrice = 250;
                         break;
                     case "7":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break;
                     case "13":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break;
                     case "9":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break;
                     case "11":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break;
                     case "15":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break;
                     case "16":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break;
                     case "17":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break;
                     case "10":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break; 
                     case "14":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break;     
                     case "12":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break;    
                     case "19":
-                        var groupPrice = 225;
+                        var groupPrice = 230;
                         break;   
                     default:
                         var groupPrice = 0;
@@ -205,6 +205,8 @@ jQuery(document).ready(function(){
         jQuery('#atgp-display-total #alert span').remove();
         totalCheque = cheque1;
         if (cheque2) {
+            //if pass sport, cheque 2 = 50
+            //if not, cheque 2 > 80
             totalCheque = cheque1+cheque2;
         }
         if ((cheque2) && (cheque3)){
