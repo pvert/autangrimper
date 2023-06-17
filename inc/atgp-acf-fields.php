@@ -269,7 +269,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'label' => 'Courriel',
                         'name' => 'atgp_courriel',
                         'type' => 'email',
-                        'instructions' => 'L’adresse mail est nécessaire pour que vous puissiez recevoir la licence sportive et les informations du club.
+                        'instructions' => 'L\'adresse mail est nécessaire pour que vous puissiez recevoir la licence sportive et les informations du club.
     Le dossier à imprimer sera envoyé à cette adresse.',
                         'required' => 1,
                         'conditional_logic' => 0,
@@ -704,7 +704,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'sub_fields' => array(
                     array(
                         'key' => 'field_60c003af9f98d',
-                        'label' => 'Aide',
+                        'label' => 'Info utile',
                         'name' => '',
                         'type' => 'message',
                         'instructions' => '',
@@ -750,8 +750,8 @@ if( function_exists('acf_add_local_field_group') ):
                                     'id' => '',
                                 ),
                                 'choices' => array(
-                                    'atgp-reduc-1' => '-30€ sur le 3eme adhérent d’une même famille.(1 seule réduction par famille)',
-                                    'atgp-reduc-2' => '-10% pour un membre Conseil d’administration, ou du Bureau de l’association',
+                                    'atgp-reduc-1' => '-30€ sur le 3eme adhérent d\'une même famille.(1 seule réduction par famille)',
+                                    'atgp-reduc-2' => '-10% pour un membre Conseil d\'administration, ou du Bureau de l\'association',
                                 ),
                                 'allow_custom' => 0,
                                 'default_value' => array(
@@ -810,7 +810,7 @@ if( function_exists('acf_add_local_field_group') ):
                             'id' => '',
                         ),
                         'default_value' => '',
-                        'placeholder' => 'Cliquez sur le bouton "Mettre à jour le montant en pied de page"',
+                        'placeholder' => 'Cliquez sur le bouton bleu "Mettre à jour le montant" en pied de page',
                         'prepend' => '',
                         'append' => '',
                         'min' => '',
@@ -834,17 +834,17 @@ if( function_exists('acf_add_local_field_group') ):
                         'sub_fields' => array(
                             array(
                                 'key' => 'field_60c44d1584302',
-                                'label' => 'Pass\'Sport',
+                                'label' => '',
                                 'name' => 'passsport',
                                 'type' => 'true_false',
-                                'instructions' => '<h3>Utilisation du <a href="https://www.sports.gouv.fr/accueil-du-site/article/le-pass-sport">Pass\'Sport</a></h3>
-                                Nous mettons en place la possibilité d\'utiliser le chèque Pass Sport. Si vous pensez avoir droit à cette aide, cochez la case ci-dessous.',
+                                'instructions' => '<h3 style="margin-top:0">Utilisation du <a href="https://www.sports.gouv.fr/accueil-du-site/article/le-pass-sport">Pass\'Sport</a></h3>
+                                <p>Nous mettons en place la possibilité d\'utiliser le chèque Pass Sport. Si vous pensez avoir droit à cette aide, cochez la case ci-dessous.</p>',
                                 'required' => 0,
                                 'conditional_logic' => 0,
                                 'wrapper' => array(
                                     'width' => '',
                                     'class' => '',
-                                    'id' => '',
+                                    'id' => 'passsport',
                                 ),
                                 'message' => '',
                                 'default_value' => 0,
@@ -866,11 +866,22 @@ if( function_exists('acf_add_local_field_group') ):
                                     'id' => '',
                                 ),
                                 'message' => '
-                                <p><strong>Le paiement lors de l\’inscription se fera exclusivement par chèques</strong> insérés dans le dossier d\’inscription, avec possibilité de payer 1, 2 ou 3 chèques, comme suit :</p>
+                                <p><strong>Le paiement lors de l\'inscription se fera exclusivement par chèques</strong> insérés dans le dossier d\'inscription, avec possibilité de payer 1, 2 ou 3 chèques, comme suit :</p>
                                 <ul>
-                                <li>chèque 1 de 80€ (minimum du 1er chèque qui sera encaissé en septembre) </li>
-                                <li>chèque 2 de 50€ encaissé en Octobre <br><span style="text-decoration: underline;">Si vous avez coché la case «&nbsp;Pass Sport&nbsp;»</span> lors de l\’inscription en ligne, le chèque de 50 € ne sera pas encaissé et sera déchiré (ou rendu), si nous recevons votre code « Pass sport ». <br><span style="text-decoration: underline;">Si vous n\’avez pas coché la case «&nbsp;Pass Sport&nbsp;»</span>, le montant minimum du chèque sera de 80€ .(ou solde complet si vous payez en 2 chèques).</li>
-                                <li>chèque 3 du solde de l\’inscription, encaissé en Novembre</li>
+                                    <li><u>chèque 1 de minimum 80€</u>, encaissé en septembre </li>
+                                    <li><u>Si vous avez coché la case « Pass Sport »</u>, le montant des chèques 2 et 3 sera rempli automatiquement comme suit:
+                                        <ul>
+                                            <li>le montant du chèque 2 sera de la valeur totale -50€, encaissé en Octobre </li>
+                                            <li>le montant du chèque 3 sera de 50€. Ce chèque ne sera pas encaissé et sera déchiré (ou rendu), si nous recevons votre code « Pass sport ».(en Janvier)</li>
+                                        </ul>
+                                    </li>                              
+                                    <li>
+                                    <u>Si vous n\'avez pas coché la case « Pass Sport»</u>:
+                                        <ul>
+                                            <li>le montant du chèque 2 devra être d\'une valeur minimale de 80€, encaissé en Octobre </li>
+                                            <li>le montant du chèque 3 sera du montant du solde de l\'inscription, encaissé en Novembre</li>
+                                        </ul>
+                                    </li> 
                                 </ul>
                                 ',
                                 'new_lines' => 'wpautop',
@@ -881,20 +892,20 @@ if( function_exists('acf_add_local_field_group') ):
                                 'label' => 'Montant chèque 1',
                                 'name' => 'atgp_echeancier_1_montant',
                                 'type' => 'number',
-                                'instructions' => 'Chèque 1, Septembre : <strong>Montant minimum de 80€</strong><br>
-    <strong>cliquez sur le bouton "Mettre à jour le montant" en bas de page, avant de saisir le montant du chèque</strong>',
+                                'instructions' => 'Chèque 1, Septembre : <strong>Montant minimum de 80€</strong><br><u>sauf pour une inscription au groupe "enfant libre" (enf-L) avec Pass\'Sport</u>
+                                <p><strong>Cliquez sur le bouton bleu "Mettre à jour le montant" en bas de page, avant de saisir le montant du chèque</strong></p>',
                                 'required' => 1,
                                 'conditional_logic' => 0,
                                 'wrapper' => array(
                                     'width' => '',
                                     'class' => '',
-                                    'id' => '',
+                                    'id' => 'atgp_echeancier_1_montant',
                                 ),
                                 'default_value' => '',
                                 'placeholder' => '',
                                 'prepend' => '',
                                 'append' => '',
-                                'min' => 80,
+                                'min' => '',
                                 'max' => '',
                                 'step' => '',
                             ),
@@ -903,19 +914,19 @@ if( function_exists('acf_add_local_field_group') ):
                                 'label' => 'Numéro chèque 1',
                                 'name' => 'atgp_echeancier_1_numero',
                                 'type' => 'number',
-                                'instructions' => 'Numéro du chèque',
+                                'instructions' => '',
                                 'required' => 1,
                                 'conditional_logic' => 0,
                                 'wrapper' => array(
                                     'width' => '',
                                     'class' => '',
-                                    'id' => '',
+                                    'id' => 'atgp_echeancier_1_numero',
                                 ),
                                 'default_value' => '',
                                 'placeholder' => '',
                                 'prepend' => '',
                                 'append' => '',
-                                'min' => '50',
+                                'min' => '',
                                 'max' => '',
                                 'step' => '',
                             ),
@@ -924,13 +935,13 @@ if( function_exists('acf_add_local_field_group') ):
                                 'label' => 'Paiement en 3 fois',
                                 'name' => 'paiement_en_3_fois',
                                 'type' => 'true_false',
-                                'instructions' => '',
+                                'instructions' => 'Si vous avez coché la case "utilisation du Pass\'Sport", les montants seront définis automatiquement, selon les critères ci-dessus, <u>après avoir saisi le montant du chèque 1</u>.',
                                 'required' => 0,
                                 'conditional_logic' => 0,
                                 'wrapper' => array(
                                     'width' => '',
                                     'class' => '',
-                                    'id' => '',
+                                    'id' => 'paiement_en_3_fois',
                                 ),
                                 'message' => '',
                                 'default_value' => 0,
@@ -943,7 +954,11 @@ if( function_exists('acf_add_local_field_group') ):
                                 'label' => 'Montant chèque 2',
                                 'name' => 'atgp_echeancier_2_montant',
                                 'type' => 'number',
-                                'instructions' => 'Chèque 2, Octobre',
+                                'instructions' => 'Chèque 2, encaissé en Octobre<br>
+                                                    <ul style="font-size: .8rem;color:#667085;">
+                                                        <li>Si utilisation du pass\'sport, montant automatique (solde restant-50€)</li>
+                                                        <li>Sinon, 80€ minimum<br><u>sauf pour une inscription au groupe "enfant libre" (enf-L)</u></li>
+                                                    </ul>',
                                 'required' => 0,
                                 'conditional_logic' => array(
                                     array(
@@ -957,7 +972,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'wrapper' => array(
                                     'width' => '',
                                     'class' => '',
-                                    'id' => '',
+                                    'id' => 'atgp_echeancier_2_montant',
                                 ),
                                 'default_value' => '',
                                 'placeholder' => '',
@@ -972,7 +987,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'label' => 'Numéro chèque 2',
                                 'name' => 'atgp_echeancier_2_numero',
                                 'type' => 'number',
-                                'instructions' => 'Numéro du chèque 2',
+                                'instructions' => '',
                                 'required' => 1,
                                 'conditional_logic' => array(
                                     array(
@@ -986,7 +1001,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'wrapper' => array(
                                     'width' => '',
                                     'class' => '',
-                                    'id' => '',
+                                    'id' => 'atgp_echeancier_2_numero',
                                 ),
                                 'default_value' => '',
                                 'placeholder' => '',
@@ -1001,7 +1016,11 @@ if( function_exists('acf_add_local_field_group') ):
                                 'label' => 'Montant chèque 3',
                                 'name' => 'atgp_echeancier_3_montant',
                                 'type' => 'number',
-                                'instructions' => 'Chèque 3, Novembre',
+                                'instructions' => ' <ul style="font-size: .8rem;color:#667085;">
+                                                        <li>Si utilisation du pass\'sport, montant automatique de 50€, non encaissé et déchiré (ou rendu), si nous recevons votre code « Pass sport ».(en Janvier)</li>
+                                                        <li>Sinon, montant du solde restant encaissé en Novembre</li>
+                                                    </ul>
+                                                ',
                                 'required' => 0,
                                 'conditional_logic' => array(
                                     array(
@@ -1015,13 +1034,13 @@ if( function_exists('acf_add_local_field_group') ):
                                 'wrapper' => array(
                                     'width' => '',
                                     'class' => '',
-                                    'id' => '',
+                                    'id' => 'atgp_echeancier_3_montant',
                                 ),
                                 'default_value' => '',
-                                'placeholder' => '',
+                                'placeholder' => 'si pass\'sport, 50€ ; sinon solde restant',
                                 'prepend' => '',
                                 'append' => '',
-                                'min' => '',
+                                'min' => '50',
                                 'max' => '',
                                 'step' => '',
                             ),
@@ -1030,7 +1049,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'label' => 'Numéro chèque 3',
                                 'name' => 'atgp_echeancier_3_numero',
                                 'type' => 'number',
-                                'instructions' => 'Numéro du chèque 3',
+                                'instructions' => '',
                                 'required' => 1,
                                 'conditional_logic' => array(
                                     array(
@@ -1049,7 +1068,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'wrapper' => array(
                                     'width' => '',
                                     'class' => '',
-                                    'id' => '',
+                                    'id' => 'atgp_echeancier_3_numero',
                                 ),
                                 'default_value' => '',
                                 'placeholder' => '',
