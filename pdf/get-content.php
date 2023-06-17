@@ -221,13 +221,6 @@ ol li {
                             endwhile;
                             }
 
-                            // if ($atgp_reduc_type == "fixe") {
-                            // $type_reduction="€";
-                            // $cout_reduction_total=$cout_reduction_total+$atgp_reduc_montant;
-                            // } else {
-                            // $type_reduction="%";
-                            // $reduc_pourcentage=$atgp_reduc_montant;
-                            // }
                             if ($atgp_reduc_type == "fixe") {
                                 $type_reduction="€";
                                 $reduc_fixe=$atgp_reduc_montant;
@@ -262,9 +255,7 @@ ol li {
                         }
                     }
                     $atgp_total=$cout_cours_total-($cout_cours_total*$reduc_pourcentage)-$reduc_fixe;
-                    // if ($type_reduction=="%") {
-                    //     $atgp_total=$atgp_total-($atgp_total*($reduc_pourcentage/100));
-                    //     }
+
                     ?>
                     <tr>
                         <td colspan="2" class="borderb"></td>
@@ -276,6 +267,12 @@ ol li {
                 </table>
 
                 <h4>Mode de paiement:</h4>
+                <?php if ($cout['atgp_paiement']['passsport']) {
+                    ?>
+                    <p><strong class="passsport">Utilisation du Pass'Sport</strong></p>
+                    <?php
+                }
+                ?>
                 <ul>
                     <li>Chèque 1, numéro <?php echo $cout['atgp_paiement']['atgp_echeancier_1_numero'];?> : <?php echo $cout['atgp_paiement']['atgp_echeancier_1_montant'];?> €</li>
                 <?php 
