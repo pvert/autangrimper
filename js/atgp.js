@@ -256,7 +256,7 @@ jQuery(document).ready(function(){
             
         } else {
             console.log("PASS SPORT NOT CHECKED");
-            if (cheque2 < 80 ) {
+            if ( (cheque2 < 80) && (jQuery('[data-taxonomy=atgp-ctx-group] [value=18]').is(':not(:checked)')) && (jQuery('#passsport input').is(':not(:checked)')) ) {
                 jQuery('#atgp-display-total #alert').append("<p>Le chèque 2 doit être d'un montant minimal de 80€ ("+total+ ")</p>");
             }
         }

@@ -957,7 +957,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'instructions' => 'Chèque 2, encaissé en Octobre<br>
                                                     <ul style="font-size: .8rem;color:#667085;">
                                                         <li>Si utilisation du pass\'sport, montant automatique (solde restant-50€)</li>
-                                                        <li>Sinon, 80€ minimum</li>
+                                                        <li>Sinon, 80€ minimum<br><u>sauf pour une inscription au groupe "enfant libre" (enf-L)</u></li>
                                                     </ul>',
                                 'required' => 0,
                                 'conditional_logic' => array(
