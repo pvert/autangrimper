@@ -177,3 +177,7 @@ section[id^="atgp_"] {
     }
 }
   
+.passsport {
+    background-color: var(--second-theme-color);
+    padding:10px 20px;
+}

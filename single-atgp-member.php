@@ -175,7 +175,13 @@ $post_id=get_the_id();
                   <div class="wp-block-columns" id="atgp_paiement">
                      <div class="wp-block-column" id="atgp_paiement_echeancier">
                         <h3>Mode de paiement  <?php //echo $cout['atgp_paiement']['paiement_en_3_fois'];?></h3>
-                        <p><em>Chèque(s) à remplir à l'ordre de Autan Grimper</em></p>   
+                        <p><em>Chèque(s) à remplir à l'ordre de Autan Grimper</em></p>  
+                        <?php if ($cout['atgp_paiement']['passsport']) {
+                           ?>
+                           <p><strong class="passsport">Utilisation du Pass'Sport</strong></p>
+                           <?php
+                        }
+                        ?>
                         <ul>
                            <li>Montant chéque 1, numéro <?php echo $cout['atgp_paiement']['atgp_echeancier_1_numero'];?> : <?php echo $cout['atgp_paiement']['atgp_echeancier_1_montant'];?> €</li>
                            <?php 
@@ -249,13 +255,8 @@ $post_id=get_the_id();
                            }
                         }
                            $atgp_total=$cout_cours_total-($cout_cours_total*$reduc_pourcentage)-$reduc_fixe;
-                           // if ($type_reduction=="%") {
-                           //    $atgp_total=$atgp_total-($atgp_total*($reduc_pourcentage/100));
-                           //    }
+
                            ?>
-                           <!-- <li> -->
-                              <?php //echo $cout_cours_total."-(".$cout_cours_total."*".$reduc_pourcentage.")-".$reduc_fixe;?>
-                           <!-- </li> -->
                            <li>
                               <span>Coût total : </span>
                               <span><?php echo $atgp_total; ?> €</span>
