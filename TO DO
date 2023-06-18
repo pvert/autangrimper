@@ -4,8 +4,10 @@ Chaque année :
   - js/atgp.js
   - backoffice : acf fields "cout" pour chaque groupe
   - backoffice : ATGP Membres/ configuration ; créer les réductions
-- mettre à jour les nouveaux ID de groupe dans js/atgp.js
+- mettre à jour si nécessaire les nouveaux ID de groupe dans js/atgp.js
   
-- changer les QS médicaux (adultes / mineurs) sur le plugin
+- changer les QS médicaux (adultes / mineurs) sur le plugin dans file/
 
 - pdf/get-content.php : saison en cours
+
+- editer la page 1685 dans la base pour les infos de base
