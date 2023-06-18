@@ -1040,7 +1040,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'placeholder' => 'si pass\'sport, 50€ ; sinon solde restant',
                                 'prepend' => '',
                                 'append' => '',
-                                'min' => '50',
+                                'min' => '',
                                 'max' => '',
                                 'step' => '',
                             ),
