@@ -103,12 +103,15 @@ function atgp_title_saver( $post_id ) {
     // QS-SANTE
     $linkToPDF_QS_SPORT="../files/questionnaire_medical.pdf";
     $linkToPDF_QS_SPORT_MINEUR="../files/questionnaire_medical_mineur.pdf";
+    $linkToPDF_ASSUR_FFME="../files/2024-pack-assurance-14-15.pdf";
     $message.="<p>Pour les renouvellements de licence, vous devez joindre au dossier le questionnaire santé QS-SPORT à télécharger et imprimer à l'adresse suivante : </p>\r\n";
     $message.= "<p>Pour les adultes: ".plugins_url($linkToPDF_QS_SPORT, __FILE__)."</p>\r\n";
     $message.= "<p>Pour les mineurs: ".plugins_url($linkToPDF_QS_SPORT_MINEUR, __FILE__)."</p>\r\n";
     // $message.= "<p>Votre mot de passe : <strong>".$etat_civil['atgp_code_postal']."</strong></p>\r\n";
-
-    $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec certificat médical, questionnaire santé et chéque(s)"."</u></strong></p>\r\n";
+    $message.= "<h2>Assurance</h2><p><p>Assurance, remplissez et imprimez le bulletin suivant, en laissant les cases cochées par défaut (prix inclus dans l'adhésion au club) : ".plugins_url($linkToPDF_ASSUR_FFME, __FILE__)."</p>\r\n";
+    $message.= "Ne rajoutez aucun chèque ni supplément d'assurance à l’adhésion. Pour toutes les autres options si vous en souhaitez , ski… il faudra accéder au site de la FFME pour y souscrire et régler en ligne les suppléments à partir du 1er Septembre.</p>\r\n";
+    $message.= "<hr>\r\n";
+    $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec certificat médical, questionnaire santé, le bulletin d'assurance rempli, et chéque(s)"."</u></strong></p>\r\n";
     $message.="<p>Autan Grimper<br>".$email."<br>".$tel."</p>";
     // $message .= $post->post_title . ": " . $post_url;
 
