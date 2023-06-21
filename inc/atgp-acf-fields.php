@@ -681,9 +681,12 @@ if( function_exists('acf_add_local_field_group') ):
                     'id' => '',
                 ),
                 'message' => '<h3>Information relative à l\'assurance</h3>
-    L\'assurance corporelle est comprise dans le coût d\'adhésion.
+    <p>L\'assurance corporelle est comprise dans le coût d\'adhésion.
     Pour toutes souscriptions à des options d\'assurance, elles sont à votre charge et doivent être initier par vos soins auprès de la FFME.
-    Plus d\'informations sur le site <a href="https://www.ffme.fr/ffme/licence/#assurance" target="_blank">https://www.ffme.fr/ffme/licence</a>',
+    Plus d\'informations sur le site <a href="https://www.ffme.fr/ffme/licence/#assurance" target="_blank">https://www.ffme.fr/ffme/licence</a></p>
+    <p>L\'adhésion au club inclue une assurance responsabilité civile et spécifique escalade, pour cela nous vous demandons d\'imprimer le <a href="'.plugins_url("../files/2024-pack-assurance-14-15.pdf", __FILE__).'">contrat assurance 2023/2024 pré-rempli</a> (bonnes cases cochées par défaut).
+    Ne rajoutez aucun chèque ni supplément à l\'adhésion.
+    Pour toutes les autres options si vous en souhaitez , ski… il faudra accéder au site de la FFME pour y souscrire et régler en ligne les suppléments à partir du 1er Septembre.</p>',
                 'new_lines' => 'wpautop',
                 'esc_html' => 0,
             ),
