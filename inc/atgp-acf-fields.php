@@ -576,7 +576,7 @@ if( function_exists('acf_add_local_field_group') ):
                         ),
                         'message' => '<p><a href="https://autangrimper.fr/horaires-calendriers/" target="_blank">Voir horaires et références en cliquant ici</a> (ouverture dans une nouvelle fenêtre).</p>
     <p>Si vous choisissez une inscription sur 2 créneaux, 60€ seront automatiquement retirés du prix (vous ne payez la licence qu\'une fois).</p>
-    <p>Tarifs :<ul><li>Adultes: 185€</li><li>Groupes enfants : 230€</li><li>Perfectionnement: 250€</li><li>Enfant libre: 90€ </li></ul></p>
+    <p>Tarifs :<ul><li>Adultes: 195€</li><li>Groupes enfants : 240€</li><li>Perfectionnement: 260€</li><li>Enfant libre: 100€ </li></ul></p>
     <p style="padding:10px;background:var(--theme-color);color:#FFFFFF;">Après avoir choisi votre (vos) créneaux, cliquez sur le bouton "Mettre à jour le montant" en bas de page.</p>',
                         'new_lines' => 'wpautop',
                         'esc_html' => 0,
