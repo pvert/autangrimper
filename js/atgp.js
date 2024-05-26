@@ -87,46 +87,46 @@ jQuery(document).ready(function(){
                 /* ONLINE */
                 switch(groupID) { 
                     case "3":
-                        var groupPrice = 185;
+                        var groupPrice = 195;
                         break;
                     case "18":
-                        var groupPrice = 90;
+                        var groupPrice = 100;
                         break;
                     case "6":
-                        var groupPrice = 250;
+                        var groupPrice = 260;
                         break;
                     case "7":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break;
                     case "13":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break;
                     case "9":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break;
                     case "11":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break;
                     case "15":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break;
                     case "16":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break;
                     case "17":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break;
                     case "10":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break; 
                     case "14":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break;     
                     case "12":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break;    
                     case "19":
-                        var groupPrice = 230;
+                        var groupPrice = 240;
                         break;   
                     default:
                         var groupPrice = 0;
