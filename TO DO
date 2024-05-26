@@ -7,7 +7,9 @@ Chaque année :
 - mettre à jour si nécessaire les nouveaux ID de groupe dans js/atgp.js
   
 - changer les QS médicaux (adultes / mineurs) sur le plugin dans file/
+- changer pack assurance dans file/
 
 - pdf/get-content.php : saison en cours
 
+- editer page accueil : modif années et lien vers inscriptions
 - editer la page 1685 dans la base pour les infos de base

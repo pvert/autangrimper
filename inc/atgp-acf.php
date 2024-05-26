@@ -103,7 +103,7 @@ function atgp_title_saver( $post_id ) {
     // QS-SANTE
     $linkToPDF_QS_SPORT="../files/questionnaire_medical.pdf";
     $linkToPDF_QS_SPORT_MINEUR="../files/questionnaire_medical_mineur.pdf";
-    $linkToPDF_ASSUR_FFME="../files/2024-pack-assurance-14-15.pdf";
+    $linkToPDF_ASSUR_FFME="../files/2025-pack-assurance.pdf";
     $message.="<p>Pour les renouvellements de licence, vous devez joindre au dossier le questionnaire santé QS-SPORT à télécharger et imprimer à l'adresse suivante : </p>\r\n";
     $message.= "<p>Pour les adultes: ".plugins_url($linkToPDF_QS_SPORT, __FILE__)."</p>\r\n";
     $message.= "<p>Pour les mineurs: ".plugins_url($linkToPDF_QS_SPORT_MINEUR, __FILE__)."</p>\r\n";
