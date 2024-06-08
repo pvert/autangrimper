@@ -111,7 +111,7 @@ function atgp_title_saver( $post_id ) {
     $message.= "<h2>Assurance</h2><p><p>Assurance, remplissez et imprimez le bulletin suivant, en laissant les cases cochées par défaut (prix inclus dans l'adhésion au club) : ".plugins_url($linkToPDF_ASSUR_FFME, __FILE__)."</p>\r\n";
     $message.= "Ne rajoutez aucun chèque ni supplément d'assurance à l’adhésion. Pour toutes les autres options si vous en souhaitez , ski… il faudra accéder au site de la FFME pour y souscrire et régler en ligne les suppléments à partir du 1er Septembre.</p>\r\n";
     $message.= "<hr>\r\n";
-    $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec certificat médical, questionnaire santé, le bulletin d'assurance rempli, et chéque(s)"."</u></strong></p>\r\n";
+    $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec le questionnaire santé, le bulletin d'assurance rempli, et chéque(s)"."</u></strong></p>\r\n";
     $message.="<p>Autan Grimper<br>".$email."<br>".$tel."</p>";
     // $message .= $post->post_title . ": " . $post_url;
 

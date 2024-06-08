@@ -470,14 +470,21 @@ if( function_exists('acf_add_local_field_group') ):
                     ),
                     array(
                         'key' => 'field_60c35c310470c',
-                        'label' => 'Certificat médical',
+                        'label' => 'Questionnaire santé',
                         'name' => 'atgp_group_adhesion_group_certificat',
                         'type' => 'group',
-                        'instructions' => '<strong>le certificat médical doit mentionner "apte à la compétition"</strong>.<br>
-    Le certificat médical est <strong>valable 3 ans</strong>(date à date).<br>
-    Pour les renouvellements d\'inscription de cette année, même si votre certificat est encore valide, nous vous demandons de poster un scan en utilisant les champs ci-dessous. 
-    (il ne sera pas demandé l\'année prochaine si il est toujours valide)
-    <p>Vous trouverez un modèle de certificat médical à faire compléter par votre médecin sur le site de la FFME: <a href="https://www.ffme.fr/wp-content/uploads/2019/11/certificat-medical-type.pdf" target="_blank">Modèle certificat médical</a> </p>',
+                        'instructions' => '<p><strong>ATTENTION NOUVELLES REGLES POUR LE CERTIFICAT MEDICAL&nbsp;</strong></p>
+                        <p>Seul le&nbsp;<strong>questionnaire de santé</strong>&nbsp;&nbsp;( QS) est nécessaire pour le dossier d’inscription enfant et adulte.
+                        <br>
+                        Ce questionnaire doit être rempli , coché&nbsp;<strong>«&nbsp;non&nbsp;»&nbsp;</strong>à toutes les questions et signé par les parents ou l’adhérent adulte, et joint au dossier d’inscription &nbsp;pour que nous puissions valider la licence.
+                        <br>
+                        Si vous répondez&nbsp;<strong>«&nbsp;oui&nbsp;»</strong>&nbsp;à une seule question du QS , le&nbsp;<strong>certificat médical</strong>&nbsp;est obligatoire &nbsp;au dossier d’inscription.&nbsp;
+                        <br>
+                        Cette règle est applicable aux enfants et aux adultes.
+                        </p>
+                        <p><a href="https://autangrimper.fr/wp-content/uploads/2022/06/2022_QUESTIONNAIRE-DE-SANTE-MINEURS_WEB.pdf" target="_blank">Questionnaire pour les mineurs</a>
+                        <br><a href="https://autangrimper.fr/wp-content/uploads/2022/06/2022_cerfa_15699-01_WEB.pdf" target="_blank">Questionnaire pour les adultes</a>
+                         </p>',
                         'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
@@ -522,26 +529,7 @@ if( function_exists('acf_add_local_field_group') ):
                                 'display_format' => 'd/m/Y',
                                 'return_format' => 'd/m/Y',
                                 'first_day' => 1,
-                            ),
-                            array(
-                                'key' => 'field_60c3fe09e64d0',
-                                'label' => 'Nom du médecin',
-                                'name' => 'atgp_group_adhesion_certificat_medecin',
-                                'type' => 'text',
-                                'instructions' => '',
-                                'required' => 0,
-                                'conditional_logic' => 0,
-                                'wrapper' => array(
-                                    'width' => '',
-                                    'class' => '',
-                                    'id' => '',
-                                ),
-                                'default_value' => '',
-                                'placeholder' => '',
-                                'prepend' => '',
-                                'append' => '',
-                                'maxlength' => '',
-                            ),
+                            ),                            
                         ),
                     ),
                 ),

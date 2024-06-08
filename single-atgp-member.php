@@ -92,8 +92,7 @@ $post_id=get_the_id();
                      <?php
                      }
                      ?>
-                     <p>Certificat médical ou Questionnaire santé établit le : <?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_date'];?></p>
-                     <p>Médécin  : <?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_medecin'];?></p> 
+                     <p>Questionnaire santé établit le : <?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_date'];?></p>
                   </div>       
                </section>
 
