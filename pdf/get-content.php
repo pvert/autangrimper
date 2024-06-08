@@ -92,7 +92,7 @@ ol li {
 </style>
 <page orientation="portrait" format="A4" style="font-size: 12px" backtop="7mm" backbottom="7mm" backleft="7mm" backright="7mm">
     <page_header> 
-        <p>DOSSIER DE PRE-INSCRIPTION AUTAN GRIMPER 2023-2024</p>         
+        <p>DOSSIER DE PRE-INSCRIPTION AUTAN GRIMPER 2024-2025</p>         
     </page_header> 
     <?php
     $etat_civil=  get_field('atgp_group_etat_civil', $post_id);
@@ -164,9 +164,6 @@ ol li {
                 <?php
                 }
                 ?>
-                <p>Certificat médical ou Questionnaire santé établit le : <strong><?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_date'];?></strong></p>
-                <p>Médecin : <?php echo $adhesion['atgp_group_adhesion_group_certificat']['atgp_group_adhesion_certificat_medecin'];?></p>
-                
                 
                 <h3>Montant de l'adhésion</h3>
                 <table id="atgp_total" class="gray2 w300">    

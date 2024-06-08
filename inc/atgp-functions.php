@@ -62,7 +62,7 @@ function atgp_sendmail( $post_id, $post) {
         $message.= "<p>".plugins_url($linkToPDF_generator, __FILE__)."</p>\r\n";
         $message.= "<p>Votre mot de passe : <strong>".$etat_civil['atgp_code_postal']."</strong></p>\r\n";
 
-        $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec certificat médical, et chéque(s)"."</u></strong></p>\r\n";
+        $message.="<p><strong><u>Votre dossier est à retourner par courrier ou à amener à la salle, avec le questionnaire santé, et chéque(s)"."</u></strong></p>\r\n";
         $message.="<p>Autan Grimper</p>";
         // $message .= $post->post_title . ": " . $post_url;
 
